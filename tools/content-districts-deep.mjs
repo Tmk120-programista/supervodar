@@ -6,9 +6,9 @@
 export const DEEP = {
   staremesto: {
     problems: [
-      ['Rozvody, ktoré nikto nemenil od pôvodnej stavby', 'V starých meštianskych domoch bývajú stúpačky aj rozvody v byte pôvodné. Materiál po desaťročiach zvnútra korodovanie zúži priemer, takže voda tečie slabšie a v kritických miestach sa objaví bodová netesnosť. Pri zásahu preto nikdy nezačíname silou — staré potrubie sa dá pokaziť rýchlejšie, než opraviť.'],
+      ['Rozvody, ktoré nikto nemenil od pôvodnej stavby', 'Pozinkované potrubie zarastá zvnútra hrdzou a vodným kameňom. Priemer sa zužuje roky, takže tlak neklesne zo dňa na deň, ale postupne — a práve preto si to majiteľ dlho nevšimne. V najtenšom mieste potom vznikne bodová netesnosť. Spoznáte to podľa toho, že slabý prúd nespraví lepším ani nová batéria.'],
       ['Uzávery, ktoré sa nedajú otočiť', 'Najčastejší problém, na ktorý v centre narazíme, nie je samotná porucha, ale to, že sa voda nedá odstaviť. Ventily, ktorými roky nikto nehýbal, sú zablokované vodným kameňom. Preto sa vždy vopred pýtam, kde máte hlavný uzáver a či ním ide otočiť — od toho závisí, či ide o hodinovú prácu alebo o dohodu so správcom.'],
-      ['Kúpeľne prerobené na viackrát', 'Byty v centre menili majiteľov aj dispozíciu. Za obkladom sa preto občas objaví riešenie, ktoré nezodpovedá žiadnemu súčasnému štandardu — napojenie navyše, zaslepená vetva alebo odpad s minimálnym spádom. Pri rekonštrukcii sa oplatí zavolať pred búraním, aby sa to zistilo skôr než po položení dlažby.'],
+      ['Kúpeľne prerobené na viackrát', 'Zaslepená vetva, na ktorú sa pri niektorej z predošlých prerábok zabudlo, je v starom byte bežný nález. Voda v nej stojí, zapácha a pri zmene tlaku sa vie ozvať netesnosťou. Podobne odpad s minimálnym spádom — funguje dovtedy, kým sa v ňom neusadí prvý nános. Odhaliť sa to dá len vtedy, keď je stena otvorená.'],
     ],
     faqMore: [
       ['Bývam v dome so správcom. Kto rieši odstavenie stúpačky?', 'Ak zásah vyžaduje odstavenie stúpačky, dohodneme to so správcom alebo domovníkom vopred a naplánujeme prácu tak, aby bola voda vypnutá čo najkratšie. Bežné opravy v byte to nevyžadujú.'],
@@ -30,8 +30,8 @@ export const DEEP = {
   },
   petrzalka: {
     problems: [
-      ['Výška odpadu v bytovom jadre', 'Toto je pri panelovej zástavbe najčastejšie obmedzenie. Rozhoduje o tom, či sa dá vaňa vymeniť za sprchový kút a aký typ vaničky je vôbec možný — nízka vanička si vyžaduje odpad v určitej výške a tá tam nemusí byť. Preto to overujem vopred, aby ste nekúpili kus, ktorý sa nedá osadiť.'],
-      ['Spoločná stúpačka pre celý stĺpec bytov', 'Ak sa u vás spomaľuje odtok, nemusí byť príčina vo vašom byte. Stúpačka je spoločná a nános v nej sa prejaví u viacerých susedov naraz. Pri obhliadke sa preto vždy pýtam, či sa spomaľuje jedno zariadenie alebo viac — podľa toho sa líši riešenie aj cena.'],
+      ['Výška odpadu v bytovom jadre', 'Nízka vanička potrebuje odpad v konkrétnej výške a v jadre nemusí byť. Riešenia sú dve: vanička s vyšším rámom, alebo úprava odpadu — a každé stojí inak. Rozdiel býva väčší, než koľko robí cena samotnej vaničky, takže sa oplatí zmerať to pred nákupom, nie po ňom.'],
+      ['Spoločná stúpačka pre celý stĺpec bytov', 'Nános v stúpačke sa neusádza rovnomerne. Najskôr sa ozve byt najnižšie v stĺpci, potom postupne ďalšie. Ak susedia hlásia to isté, ide o spoločný rozvod a má zmysel to posunúť správcovi — inak zaplatíte za čistenie, ktoré príčinu neodstráni.'],
       ['Podomietkové nádržky bez viditeľnej poruchy', 'Pri splachovačoch zabudovaných do steny je nevýhodou, že netesnosť nevidíte. Voda tichým prúdom uniká do misy a majiteľ to zistí až z vyúčtovania. Dobrá správa je, že sa k mechanizmu dá takmer vždy dostať cez revízny otvor pod tlačidlom — bez búrania obkladu.'],
     ],
     faqMore: [
@@ -42,7 +42,7 @@ export const DEEP = {
   },
   novemesto: {
     problems: [
-      ['Slabý a kolísavý tlak vo vyšších polohách', 'Na Kolibe a v okolí Kramárov je tlak vody téma, ktorá sa v nížine nerieši. Ak vám voda tečie slabo, príčina nemusí byť v batérii — často ide o zanesený filter, zle nastavený redukčný ventil alebo o čerpadlo, ktoré už neťahá tak ako kedysi. Rozdiel sa dá zistiť meraním, nie odhadom.'],
+      ['Slabý a kolísavý tlak vo vyšších polohách', 'Rozdiel medzi lokálnym a celkovým poklesom tlaku zistíte za minútu aj sami: skúste dva rôzne kohútiky v rôznych miestnostiach. Ak tečie slabo všade, príčina je pri zdroji — filter, redukčný ventil alebo čerpadlo. Ak len na jednom mieste, ide o perlátor alebo o samotnú batériu. Ušetrí to zbytočnú výmenu.'],
       ['Väčšie vykurovacie sústavy rodinných domov', 'Dom má oproti bytu podstatne rozsiahlejšiu sústavu a nerovnomerné hrejúce radiátory sú tu bežnejšie. Samotné odvzdušnenie často nestačí — treba sústavu aj vyvážiť, inak najbližší radiátor od kotla berie teplo na úkor tých vzdialenejších.'],
       ['Byty v starších domoch pod svahom', 'V nižšie položených uliciach ide o klasickú bytovú prácu: výmeny batérií, opravy splachovania, sifóny a odpady. Pri starších bytoch odporúčam vymeniť rohové ventily rovno pri zásahu — po rokoch sa často nedajú uzavrieť a pri budúcej poruche to znamená odstavenie celého bytu.'],
     ],
@@ -79,7 +79,7 @@ export const DEEP = {
   raca: {
     problems: [
       ['Vonkajšie výtoky a mrazy', 'Kohút v záhrade, ktorý sa na zimu nevypustí, po prvom silnejšom mraze praskne — a nie vždy navonok. Voda sa potom objaví v stene alebo v zemi až pri jarnom napustení. Zazimovanie je krátka práca, ktorá sa jednoznačne oplatí.'],
-      ['Rozvody vedené v zemi', 'Pri rodinných domoch býva časť rozvodov mimo dohľad. Netesnosť sa tam neprejaví mokrou stenou, ale poklesom tlaku alebo čerpadlom, ktoré spína aj vtedy, keď nikto neodoberá vodu. Práve tieto príznaky pomáhajú zúžiť úsek, kde treba hľadať.'],
+      ['Rozvody vedené v zemi', 'Vinič a záhrady znamenajú, že časť potrubia vedie mimo dom. Porucha sa tam neohlási mokrou stenou — skôr tým, že tlak klesá alebo že čerpadlo beží bez toho, aby niekto pustil vodu. Podľa týchto príznakov vieme zúžiť úsek, ktorý treba odkryť.'],
       ['Vykurovacie sústavy s viacerými okruhmi', 'V dome býva sústava rozsiahlejšia a citlivejšia na vyváženie. Ak jedna miestnosť hreje výborne a druhá vôbec, samotné odvzdušnenie problém nevyrieši — treba nastaviť prietok tak, aby sa teplo rozdelilo rovnomerne.'],
     ],
     faqMore: [
@@ -114,9 +114,9 @@ export const DEEP = {
   },
   devin: {
     problems: [
-      ['Domáce vodárne a časté spínanie', 'Ak čerpadlo spína krátko a často, príčina býva v tlakovej nádobe, ktorá stratila predtlak — nie v samotnom čerpadle. Rozdiel sa dá zmerať za pár minút. Ak sa to nerieši, čerpadlo sa opotrebuje podstatne rýchlejšie, než by muselo.'],
+      ['Domáce vodárne a časté spínanie', 'Predtlak v tlakovej nádobe sa kontroluje manometrom a dopĺňa bežnou pumpou — je to práca na pár minút. Ak sa zanedbá, membrána vnútri praskne a nádoba sa zaleje vodou; vtedy už pomôže len výmena. Jedna kontrola ročne tomu spoľahlivo predíde.'],
       ['Netesnosti v rozvodoch vedených v zemi', 'V rodinnom dome je časť rozvodov mimo dohľad a porucha sa neohlási mokrou stenou. Príznakom býva pokles tlaku, čerpadlo bežiace bez odberu alebo vlhkosť v netypickom mieste. Podľa nich sa dá zúžiť úsek, kde má zmysel hľadať.'],
-      ['Vonkajšie výtoky pred zimou', 'Kohút v záhrade, ktorý sa nevypustí, po mraze praskne — často v časti skrytej v stene. Zazimovanie je krátky úkon, ktorý ušetrí jarné prekvapenie.'],
+      ['Vonkajšie výtoky pred zimou', 'Vonkajší výtok praskne najčastejšie v úseku, ktorý prechádza stenou — teda tam, kde to zvonku nevidno. Škoda sa ohlási až pri jarnom napustení, keď voda tečie do muriva. Vypustiť ho pred mrazmi je otázka minút.'],
     ],
     faqMore: [
       ['Ako často treba kontrolovať domácu vodáreň?', 'Pravidelná kontrola predtlaku v tlakovej nádobe sa oplatí raz ročne. Zachytí opotrebenie skôr, než sa z neho stane porucha.'],
@@ -139,7 +139,7 @@ export const DEEP = {
   lamac: {
     problems: [
       ['Zatuhnuté termostatické hlavice', 'Typický príznak: hlavicu otáčate, ale radiátor zostane trvalo studený alebo naopak trvalo horúci. Chyba býva v kolíku ventilu, ktorý sa po lete zablokoval. Často sa dá uvoľniť bez výmeny — a je to rozdiel medzi krátkou opravou a novým ventilom.'],
-      ['Bytové aj domové zákazky v jednej štvrti', 'Lamač je malý, ale zmiešaný. Preto sa vždy najprv pýtam na typ bývania — v byte ide o batérie, splachovanie a sifóny, v dome o rozvody, uzávery a väčšiu vykurovaciu sústavu. Od toho sa odvíja postup aj odhad ceny.'],
+      ['Bytové aj domové zákazky v jednej štvrti', 'V bytovom dome sa voda odstaví ventilom priamo v byte. V rodinnom dome býva uzáver v šachte alebo pri vodomere a nie každý majiteľ vie, kde presne. Znie to ako detail, ale rozhoduje o tom, či sa oprava dá začať hneď, alebo sa najprv hľadá, čím vodu vypnúť.'],
       ['Silikón, ktorý prestal tesniť', 'Škára pri vani zostarne nerovnomerne: najskôr sčernie, potom sa v rohu odtrhne od podkladu a voda vsakuje pod vaňu. Zvonku pritom môže vyzerať ešte prijateľne. Nový silikón nanesený na starý nedrží — starú škáru treba odstrániť kompletne.'],
     ],
     faqMore: [
@@ -175,7 +175,7 @@ export const DEEP = {
   jarovce: {
     problems: [
       ['Hľadanie poruchy v rozsiahlejšej inštalácii', 'V dome je vodoinštalácia dlhšia než v byte a porucha sa nemusí ohlásiť viditeľne. Príznakom býva pokles tlaku alebo čerpadlo, ktoré beží aj bez odberu. Práve preto sa pýtam na detaily — zúži to okruh hľadania a šetrí to čas aj peniaze.'],
-      ['Uzávery, ktoré treba vymeniť preventívne', 'Ventil, ktorým sa roky nehýbalo, sa v kritickej chvíli často nedá otočiť. Odporúčam ich výmenu vždy, keď sa v ich okolí aj tak robí zásah — je to najlacnejšia poistka vo vodoinštalácii.'],
+      ['Uzávery, ktoré treba vymeniť preventívne', 'Guľový uzáver vydrží roky aj bez pohybu. Starší ventil s vretenom nie — vreteno zarastie vodným kameňom a pri prvom otočení sa buď zasekne, alebo odlomí. Preto pri výmene odporúčam guľové a preto sa to oplatí spraviť skôr, než ich budete potrebovať v zhone.'],
       ['Bežné opravy aj v okrajovej časti', 'Batérie, WC, sifóny a prečistenie odpadov robíme tu úplne rovnako ako v centre. Dojazd je zadarmo bez ohľadu na vzdialenosť, takže sa neoplatí odkladať drobnú opravu, kým z nej nebude väčšia.'],
     ],
     faqMore: [
@@ -191,7 +191,7 @@ export const DEEP = {
       ['Rozvody a uzávery v starších domoch', 'Časť rozvodov býva vedená v zemi alebo v konštrukcii, takže netesnosť sa prejaví skôr poklesom tlaku než vodou na povrchu. Uzávery odporúčam vymeniť preventívne, kým ešte idú otočiť.'],
     ],
     faqMore: [
-      ['Zoženiete diel k splachovaču, ktorý sa už nevyrába?', 'Vo väčšine prípadov áno. Ak treba diel doobjednať, poviem to vopred a dohodneme druhý termín.'],
+      ['Zoženiete diel k splachovaču, ktorý sa už nevyrába?', 'Vo väčšine prípadov áno — máme s tým skúsenosť aj pri systémoch starých vyše dvadsať rokov. Ak diel nie je skladom, ozvem sa hneď, ako ho budem mať.'],
       ['Máme kolísavý tlak zo studne. Čím to je?', 'Najčastejšie tlakovou nádobou, ktorá stratila predtlak, alebo netesnosťou na saní. Oboje sa dá zmerať a opraviť.'],
       ['Chodíte sem aj na menšie opravy?', 'Áno, a dojazd je zadarmo. Nie je dôvod odkladať výmenu sifónu, kým z nej nebude mokrá skrinka.'],
     ],

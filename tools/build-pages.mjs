@@ -82,13 +82,13 @@ const checkGrid = (items) =>
   `<ul class="checks">` +
   items.map((x) => `<li>${CHECK}${esc(x)}</li>`).join('\n') + `</ul>`;
 
-const svcCards = (slugs) =>
+const svcCards = (slugs, compact) =>
   `<div class="grid">` +
   slugs.filter((s) => svcBySlug[s]).map((s) => {
     const x = svcBySlug[s];
     return `<a class="svc" href="../${x.slug}/">` +
       `<img src="../${x.img}" alt="${attr(x.nav)} — vodár Bratislava" loading="lazy" width="400" height="152">` +
-      `<div class="tx"><h3>${esc(x.nav)}</h3><p>${esc(x.lead)}</p></div></a>`;
+      (compact ? `<div class="tx"><h3>${esc(x.nav)}</h3></div></a>` : `<div class="tx"><h3>${esc(x.nav)}</h3><p>${esc(x.lead)}</p></div></a>`);
   }).join('\n') + `</div>`;
 
 const chips = (items) =>
@@ -390,19 +390,7 @@ function buildDistrict(d) {
   <div class="wrap">
     <h2>Služby, na ktoré nás sem volajú</h2>
     <p class="lead" style="margin-bottom:24px">Kliknite na službu a dozviete sa, ako pri nej postupujeme.</p>
-    ${svcCards(d.top)}
-  </div>
-</section>
-
-<section class="slant">
-  <div class="wrap">
-    <h2>Ako to u vás prebieha</h2>
-    <p class="lead" style="margin-bottom:40px">Rovnako v každej mestskej časti — bez obhliadok navyše a bez ceny, ktorá sa mení až na faktúre.</p>
-    ${flowBlock([
-      ['Zavoláte', 'Opíšete, čo sa deje. Podľa toho viem povedať, čo sa dá vyriešiť na mieste a čo si vyžiada náhradný diel.'],
-      ['Dohodneme cenu a termín', 'Cenu poviem ešte pred príchodom. Termín si dohodneme tak, aby vám sedel.'],
-      ['Prídeme a opravíme', 'Dorazíme do ' + dc.gen + ', prácu spravíme na mieste a po sebe upraceme.'],
-    ])}
+    ${svcCards(d.top, true)}
   </div>
 </section>
 

@@ -173,7 +173,7 @@ export const DISTRICTS = [
     intro: [
       'V rodinnom dome je vodoinštalácia rozsiahlejšia a poruchy sa hľadajú inak než v byte. Netesnosť sa nemusí prejaviť mokrou stenou, ale poklesom tlaku alebo tým, že čerpadlo spína častejšie než kedysi.',
       'Pravidelnou témou sú tu čerpadlá a domáce vodárne. Časté spínanie väčšinou nesúvisí so samotným čerpadlom, ale s tlakovou nádobou, ktorá stratila predtlak. Ak sa to nerieši, čerpadlo sa opotrebuje výrazne rýchlejšie.',
-      'Riešime aj vonkajšie výtoky a ich zazimovanie. Kohút, ktorý sa na zimu nevypustí, dokáže po prvom mraze prasknúť aj v stene.',
+      'Staráme sa aj o výtoky pri dome — od montáže po vypustenie pred zimou. Voda, ktorá v nich cez mráz zamrzne, roztrhne potrubie aj v mieste, kde ho nevidíte.',
     ],
     top: ['cerpadla', 'ventily', 'kurenie', 'bojler', 'montazbaterii', 'sifon'],
     faq: [
@@ -196,7 +196,7 @@ export const DISTRICTS = [
     top: ['sprchovekuty', 'montazbaterii', 'kurenie', 'bojler', 'Krtkovanie', 'prackaumyvacka'],
     faq: [
       ['Dá sa u nás vymeniť vaňa za sprchový kút?', 'Vo väčšine bytov áno, ale rozhoduje výška odpadu. Overím to vopred, aby ste nekúpili vaničku, ktorá sa nedá osadiť.'],
-      ['Odveziete starý bojler?', 'Áno, starý kus odpojíme, zložíme a odvezieme.'],
+      ['Odveziete starý bojler?', 'Áno. Vypustíme ho, odpojíme a odvezieme na likvidáciu — nemusíte riešiť, ako ho dostanete z bytu.'],
     ],
     near: ['devin', 'dubravka', 'lamac', 'zahorskabystrica'],
   },
@@ -227,7 +227,7 @@ export const DISTRICTS = [
     intro: [
       'Pri novostavbách býva najčastejšou požiadavkou dokončenie a odladenie toho, čo zostalo po hrubej stavbe: montáž batérií, osadenie sanity, zapojenie spotrebičov, doplnenie uzáverov tam, kde chýbajú.',
       'Pri starších domoch ide skôr o servis. Čerpadlá, tlakové nádoby, kúrenie a rozvody vedené v zemi — u nich sa netesnosť prejaví skôr poklesom tlaku než viditeľnou vodou.',
-      'Riešime aj vonkajšie výtoky a ich zazimovanie. V mrazoch je to jedna z najčastejších príčin prasknutého potrubia v rodinnom dome.',
+      'Nezabúdame ani na záhradné rozvody. Práve nevypustený vonkajší kohút patrí medzi najčastejšie zimné poruchy, s ktorými k rodinným domom chodíme.',
     ],
     top: ['cerpadla', 'kurenie', 'ventily', 'montazbaterii', 'bojler', 'prackaumyvacka'],
     faq: [
@@ -250,7 +250,7 @@ export const DISTRICTS = [
     top: ['ventily', 'cerpadla', 'kurenie', 'montazbaterii', 'sifon', 'bojler'],
     faq: [
       ['Zazimujete nám vonkajší kohút?', 'Áno, a odporúčam to urobiť pred prvými mrazmi. Prasknuté vonkajšie potrubie je jedna z najčastejších zimných porúch v rodinných domoch.'],
-      ['Čerpadlo spína aj keď neodoberáme vodu. Čo to znamená?', 'Väčšinou netesnosť niekde v systéme alebo stratený predtlak v tlakovej nádobe. Oboje sa dá zistiť a opraviť.'],
+      ['Prečo nám tlak vody kolíše?', 'Najčastejšie za tým býva tlaková nádoba so strateným predtlakom alebo zanesený filter. Meranie ukáže príčinu rýchlejšie než výmena zariadenia naslepo.'],
     ],
     near: ['raca', 'novemesto', 'vrakuna'],
   },
