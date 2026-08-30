@@ -154,3 +154,25 @@ export const REVIEWS = [
   { name: 'Patrik', district: 'Karlova Ves', slugD: 'karlovaves', services: ['montazbaterii'],
     text: 'Cena bola taká, akú sme si dohodli po telefóne. Vodár prišiel hneď nasledujúci deň. Rýchla a kvalitná práca, môžem len odporučiť.' },
 ];
+
+// Slovak needs the borough name inflected: "do Petržalky", "pre Petržalku".
+// Inserting the nominative everywhere read as a grammar mistake.
+export const DECL = {
+  staremesto: { gen: 'Starého Mesta', acc: 'Staré Mesto' },
+  ruzinov: { gen: 'Ružinova', acc: 'Ružinov' },
+  petrzalka: { gen: 'Petržalky', acc: 'Petržalku' },
+  novemesto: { gen: 'Nového Mesta', acc: 'Nové Mesto' },
+  karlovaves: { gen: 'Karlovej Vsi', acc: 'Karlovu Ves' },
+  dubravka: { gen: 'Dúbravky', acc: 'Dúbravku' },
+  raca: { gen: 'Rače', acc: 'Raču' },
+  vrakuna: { gen: 'Vrakune', acc: 'Vrakuňu' },
+  podunajskebiskupice: { gen: 'Podunajských Biskupíc', acc: 'Podunajské Biskupice' },
+  devin: { gen: 'Devína', acc: 'Devín' },
+  devinskanovaves: { gen: 'Devínskej Novej Vsi', acc: 'Devínsku Novú Ves' },
+  lamac: { gen: 'Lamača', acc: 'Lamač' },
+  zahorskabystrica: { gen: 'Záhorskej Bystrice', acc: 'Záhorskú Bystricu' },
+  vajnory: { gen: 'Vajnôr', acc: 'Vajnory' },
+  jarovce: { gen: 'Jaroviec', acc: 'Jarovce' },
+  rusovce: { gen: 'Rusoviec', acc: 'Rusovce' },
+  cunovo: { gen: 'Čunova', acc: 'Čunovo' },
+};

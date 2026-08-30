@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { SERVICES } from './content-services.mjs';
 import { DISTRICTS } from './content-districts.mjs';
-import { SERVICE_EXTRA, DISTRICT_EXTRA, REVIEWS } from './content-extra.mjs';
+import { SERVICE_EXTRA, DISTRICT_EXTRA, REVIEWS, DECL } from './content-extra.mjs';
 
 const DOCS = 'docs';
 const SITE = 'https://supervodarba.sk';
@@ -322,6 +322,7 @@ function buildService(s) {
 // ---------- district pages ----------
 function buildDistrict(d) {
   const local = DISTRICT_EXTRA[d.slug] || [];
+  const dc = DECL[d.slug];
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -352,7 +353,7 @@ function buildDistrict(d) {
   <div class="wrap">
     <div class="about">
       <div class="prose">
-        <h2>Vodár a inštalatér pre ${esc(d.name)}</h2>
+        <h2>Vodár a inštalatér pre ${esc(dc.acc)}</h2>
         ${d.intro.map((p) => `<p>${esc(p)}</p>`).join('\n        ')}
       </div>
       <div>
@@ -362,7 +363,7 @@ function buildDistrict(d) {
         </ul>
       </div>
     </div>
-    ${ctaStrip('Ste z ' + d.name + '? Zavolajte a dohodneme termín.')}
+    ${ctaStrip('Ste z ' + dc.gen + '? Zavolajte a dohodneme termín.')}
   </div>
 </section>
 
@@ -381,14 +382,14 @@ function buildDistrict(d) {
     ${flowBlock([
       ['Zavoláte', 'Opíšete, čo sa deje. Podľa toho viem povedať, čo sa dá vyriešiť na mieste a čo si vyžiada náhradný diel.'],
       ['Dohodneme cenu a termín', 'Cenu poviem ešte pred príchodom. Termín si dohodneme tak, aby vám sedel.'],
-      ['Prídeme a opravíme', 'Dorazíme do ' + d.name + ', prácu spravíme na mieste a po sebe upraceme.'],
+      ['Prídeme a opravíme', 'Dorazíme do ' + dc.gen + ', prácu spravíme na mieste a po sebe upraceme.'],
     ])}
   </div>
 </section>
 
 <section class="warm slant">
   <div class="wrap">
-    <h2>Cenník pre ${esc(d.name)}</h2>
+    <h2>Cenník pre ${esc(dc.acc)}</h2>
     <p class="lead">Dojazd do tejto mestskej časti je zadarmo, rovnako ako kamkoľvek inam v Bratislave.</p>
     ${PRICE_PANEL}
     ${ctaStrip('Zavolajte a poviem cenu ešte pred príchodom.')}
@@ -397,7 +398,7 @@ function buildDistrict(d) {
 
 <section class="slant">
   <div class="wrap">
-    <h2>${hasLocal ? 'Hodnotenie priamo z ' + esc(d.name) : 'Skúsenosti zákazníkov'}</h2>
+    <h2>${hasLocal ? 'Hodnotenie priamo z ' + esc(dc.gen) : 'Skúsenosti zákazníkov'}</h2>
     <p class="lead" style="margin-bottom:26px">${hasLocal
       ? 'Jedno z hodnotení na Google pochádza priamo z tejto mestskej časti.'
       : 'Hodnotenia z Google od zákazníkov z Bratislavy.'}</p>
@@ -431,6 +432,7 @@ for (const s of SERVICES) {
 }
 for (const d of DISTRICTS) {
   if (!DISTRICT_EXTRA[d.slug]) throw new Error('chybia dodatocne data pre mestsku cast: ' + d.slug);
+  if (!DECL[d.slug]) throw new Error('chybia tvary skloňovania pre: ' + d.slug);
   fs.mkdirSync(path.join(DOCS, d.slug), { recursive: true });
   fs.writeFileSync(path.join(DOCS, d.slug, 'index.html'), buildDistrict(d));
   n++;
