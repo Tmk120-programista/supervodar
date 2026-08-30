@@ -45,7 +45,10 @@ section{padding:60px 0}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(100deg,rgba(7,38,62,.94) 0%,rgba(9,48,78,.88) 42%,rgba(9,48,78,.42) 72%,rgba(9,48,78,.3) 100%)}
-@media(max-width:820px){.hero::before{background:linear-gradient(180deg,rgba(7,38,62,.92),rgba(9,48,78,.86))}}
+/* On phones the photo sits behind the text, so it needs a lighter veil at the
+   top and a solid base under the buttons to keep contrast. */
+@media(max-width:820px){.hero::before{
+  background:linear-gradient(180deg,rgba(7,38,62,.62) 0%,rgba(8,43,70,.78) 45%,rgba(9,48,78,.93) 100%)}}
 .hero .wrap{padding-top:60px;padding-bottom:64px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);
   border:1px solid rgba(255,255,255,.32);padding:7px 15px;border-radius:999px;
@@ -64,6 +67,8 @@ section{padding:60px 0}
 .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.45)}
 .btn-ghost:hover{background:rgba(255,255,255,.24)}
 .hero-note{margin-top:16px;font-size:14px;color:#c8e0f2;display:flex;align-items:center;gap:8px}
+/* Ragged half-width buttons look sloppy on a narrow screen — make them match. */
+@media(max-width:560px){.cta-row{gap:10px}.cta-row .btn{flex:1 1 100%}}
 
 /* trust */
 .trust{background:var(--blue-soft);border-bottom:1px solid var(--line)}
@@ -186,7 +191,7 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
       <a class="btn btn-ghost" href="#kontakt">Napíšte nám</a>
     </div>
     <div class="hero-note">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10.6V6h-2v7.4l5 3 1-1.7-4-2.1Z"/></svg>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5.3l3.4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       Ozveme sa vám späť do 15 minút
     </div>
   </div>
@@ -197,7 +202,7 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
     <ul>
       <li><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 7h-3V6a3 3 0 0 0-3-3H5a2 2 0 0 0-2 2v10h2a3 3 0 0 0 6 0h2a3 3 0 0 0 6 0h2v-5l-2-3Zm-1 2 1.5 2H16V9h2ZM8 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
         <span><b>Dojazd zadarmo</b>k zákazníkovi v Bratislave</span></li>
-      <li><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10.6V6h-2v7.4l5 3 1-1.7-4-2.1Z"/></svg>
+      <li><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5.3l3.4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <span><b>Nonstop 24/7</b>od pondelka do nedele</span></li>
       <li><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4Zm-1 14-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7Z"/></svg>
         <span><b>12 rokov skúseností</b>a 100% záruka spokojnosti</span></li>
@@ -260,7 +265,7 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
           <span><b>Adresa</b><span class="val">Bratislava - Petržalka</span></span></div>
         <div class="cline">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10.6V6h-2v7.4l5 3 1-1.7-4-2.1Z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5.3l3.4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           <span><b>Otváracie hodiny</b><span class="val">Pondelok – nedeľa, nonstop</span></span></div>
       </div>
 
