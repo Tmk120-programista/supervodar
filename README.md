@@ -6,7 +6,7 @@ pod hosting na GitHub Pages przed wygaśnięciem abonamentu Bitrix (01.09.2026).
 ## Co jest w środku
 
 ```
-site/                     <- to publikujemy
+docs/                     <- to publikujemy
   index.html              <- strona główna
   <32 podstrony>/index.html
   bitrix/                 <- CSS/JS/obrazki z oryginalnej domeny (ta sama struktura ścieżek)
@@ -29,7 +29,7 @@ jak i na `uzytkownik.github.io/repo/`.
 ## Podgląd lokalny
 
 ```bash
-node tools/serve.mjs site 8080
+node tools/serve.mjs docs 8080
 # http://localhost:8080/
 ```
 
@@ -38,13 +38,13 @@ node tools/serve.mjs site 8080
 Dopóki oryginał żyje, można kopię przebudować:
 
 ```bash
-rm -rf site && node tools/mirror.mjs site
-node tools/patch-form.mjs site   # znów podmienia formularz i usuwa tracker
-node tools/check.mjs site        # powinno pokazać: brakujacych celow: 0
-echo supervodarba.sk > site/CNAME
+rm -rf docs && node tools/mirror.mjs docs
+node tools/patch-form.mjs docs   # znów podmienia formularz i usuwa tracker
+node tools/check.mjs docs        # powinno pokazać: brakujacych celow: 0
+echo supervodarba.sk > docs/CNAME
 ```
 
-Uwaga: `mirror.mjs` nadpisuje `site/`, więc `patch-form.mjs` i `CNAME` trzeba
+Uwaga: `mirror.mjs` nadpisuje `docs/`, więc `patch-form.mjs` i `CNAME` trzeba
 wtedy powtórzyć. `patch-form.mjs` jest idempotentny — ponowne uruchomienie
 na już załatanej kopii niczego nie zepsuje.
 
@@ -59,7 +59,7 @@ git remote add origin git@github.com:UZYTKOWNIK/supervodarba.git
 git push -u origin main
 ```
 
-Potem w repo: **Settings → Pages → Source: Deploy from a branch → `main` / `/site`**.
+Potem w repo: **Settings → Pages → Source: Deploy from a branch → `main` / `/docs`**.
 
 W DNS domeny `supervodarba.sk` ustawić rekordy A na GitHub Pages:
 `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`

@@ -3,7 +3,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = path.resolve(process.argv[2] || 'site');
+const ROOT = path.resolve(process.argv[2] || 'docs');
 const PORT = Number(process.argv[3] || 8080);
 
 const TYPES = {

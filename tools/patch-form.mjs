@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = path.resolve(process.argv[2] || 'site');
+const ROOT = path.resolve(process.argv[2] || 'docs');
 const MAIL = 'supervodarba@gmail.com';
 
 // Field labels / captions come from the original Bitrix form definition

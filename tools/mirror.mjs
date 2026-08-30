@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
-const OUT = path.resolve(process.argv[2] || 'site');
+const OUT = path.resolve(process.argv[2] || 'docs');
 const START = 'https://supervodarba.sk/';
 const PAGE_HOSTS = new Set(['supervodarba.sk', 'www.supervodarba.sk']);
 const CDN_HOSTS = new Set(['cdn.bitrix24.pl', 'cdn.bitrix24.site', 'cdn.bitrix24.eu', 'cdn.bitrix24.com']);

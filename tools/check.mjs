@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = path.resolve(process.argv[2] || 'site');
+const ROOT = path.resolve(process.argv[2] || 'docs');
 const missing = new Map();
 let checked = 0;
 
