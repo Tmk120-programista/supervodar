@@ -208,7 +208,10 @@ const provider = {
     addressLocality: 'Bratislava', addressRegion: 'Bratislavský kraj', addressCountry: 'SK',
   },
   priceRange: '€€',
-  availableLanguage: { '@type': 'Language', name: 'Slovak', alternateName: 'sk' },
+  contactPoint: {
+    '@type': 'ContactPoint', telephone: TEL, contactType: 'customer service', areaServed: 'SK',
+    availableLanguage: { '@type': 'Language', name: 'Slovak', alternateName: 'sk' },
+  },
   geo: { '@type': 'GeoCoordinates', latitude: 48.1012402, longitude: 17.1066393 },
 };
 
