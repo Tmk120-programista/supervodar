@@ -16,7 +16,7 @@ const DESC =
   'Super Vodár Bratislava - spoľahlivé vodoinštalačne služby v Bratislave. 100% záruka spokojnosti, všetky inštalatérske služby na jednom mieste.';
 const PHONE = '+421940790083';
 const EMAIL = 'supervodarba@gmail.com';
-const GOOGLE = 'https://g.page/r/CXU_r42LG3I4EA0';
+const GOOGLE = 'https://maps.app.goo.gl/zRfGkkv5mKgjxqGj6';
 
 // Bratislava boroughs that have their own landing page.
 const DISTRICTS = {
@@ -74,6 +74,9 @@ const business = {
     addressLocality: 'Bratislava',
     addressCountry: 'SK',
   },
+  // Coordinates read off the business's own Google Maps listing.
+  geo: { '@type': 'GeoCoordinates', latitude: 48.1012402, longitude: 17.1066393 },
+  hasMap: GOOGLE,
   areaServed: { '@type': 'City', name: 'Bratislava' },
   availableLanguage: { '@type': 'Language', name: 'Slovak', alternateName: 'sk' },
   // The site states 00:00-23:59 for every day of the week.
