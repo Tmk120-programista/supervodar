@@ -152,32 +152,48 @@ section{padding:60px 0}
 .ben p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.5}
 
 /* pricing */
-.prices{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);margin-top:34px}
-@media(max-width:820px){.prices{grid-template-columns:1fr}}
-.price{border-radius:18px;padding:34px 24px 30px;text-align:center;background:#fff;
-  position:relative;overflow:hidden;display:flex;flex-direction:column;
-  box-shadow:0 14px 34px rgba(0,0,0,.18)}
-/* a coloured cap tells the two free items apart from the quoted one at a glance */
-.price::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--call)}
-.price.custom::before{background:var(--blue)}
-.pic{width:66px;height:66px;margin:0 auto 18px;border-radius:50%;background:var(--blue-soft);
-  display:grid;place-items:center;color:var(--navy-2)}
-.price h3{font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 14px}
-.price .val{font-size:38px;line-height:1.1;font-weight:800;color:var(--call);letter-spacing:-.02em;
-  margin-bottom:12px}
-.price.custom .val{font-size:27px;color:var(--navy)}
-.price .desc{font-size:14.5px;color:var(--muted);margin:0;line-height:1.5;flex:1}
+/* One panel reads as a price list; three floating boxes read as clutter. */
+.pricepanel{background:#fff;border-radius:20px;overflow:hidden;margin-top:34px;
+  display:grid;grid-template-columns:repeat(3,1fr);box-shadow:0 20px 46px rgba(0,0,0,.24)}
+.pitem{padding:40px 26px;text-align:center;border-right:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center}
+.pitem:last-child{border-right:0}
+.pic{width:60px;height:60px;border-radius:17px;background:var(--navy);color:#fff;
+  display:grid;place-items:center;margin-bottom:20px}
+.pitem.free .pic{background:var(--call)}
+.pitem h3{font-size:12.5px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);margin:0 0 12px}
+.pitem .val{font-size:35px;line-height:1.05;font-weight:800;letter-spacing:-.02em;
+  color:var(--navy);margin-bottom:12px}
+.pitem.free .val{color:var(--call)}
+.pitem .desc{font-size:14px;color:var(--muted);margin:0;line-height:1.5;max-width:27ch}
+@media(max-width:820px){
+  .pricepanel{grid-template-columns:1fr}
+  .pitem{border-right:0;border-bottom:1px solid var(--line);padding:32px 24px}
+  .pitem:last-child{border-bottom:0}
+}
 
 /* about + checklist */
-.about{display:grid;gap:36px;grid-template-columns:1.15fr 1fr;align-items:center}
-@media(max-width:880px){.about{grid-template-columns:1fr}}
+.about{display:grid;gap:40px;grid-template-columns:.9fr 1fr;align-items:center}
+@media(max-width:880px){.about{grid-template-columns:1fr;gap:28px}}
 .about p{color:#33454f;font-size:15.5px;line-height:1.7;margin:0 0 16px}
 .about .sig{font-weight:700;color:var(--navy)}
-.checks{list-style:none;margin:0;padding:0}
-.checks li{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line);
-  font-size:15px;font-weight:600;color:var(--navy)}
-.checks li:last-child{border-bottom:0}
-.checks svg{flex:none;margin-top:2px;color:var(--call)}
+/* A photo anchors the section; the headline number is lifted out of the prose. */
+.aphoto{margin:0;position:relative;border-radius:18px;overflow:hidden;
+  box-shadow:0 18px 40px rgba(11,58,93,.22)}
+.aphoto img{width:100%;height:100%;min-height:360px;object-fit:cover}
+.aphoto figcaption{position:absolute;left:18px;bottom:18px;right:18px;
+  background:rgba(11,58,93,.94);color:#fff;border-radius:14px;padding:16px 20px;
+  display:flex;align-items:center;gap:14px}
+.aphoto b{font-size:38px;line-height:1;font-weight:800;letter-spacing:-.02em}
+.aphoto figcaption span{font-size:13.5px;line-height:1.35;color:#c9e2f4}
+@media(max-width:880px){.aphoto img{min-height:240px}}
+.checks{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px;
+  grid-template-columns:repeat(2,1fr)}
+@media(max-width:760px){.checks{grid-template-columns:1fr}}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;font-weight:600;
+  color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.checks .ck{flex:none;width:24px;height:24px;border-radius:50%;background:var(--call);color:#fff;
+  display:grid;place-items:center}
 .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
   color:var(--navy-2);margin:0 0 10px}
 
@@ -186,11 +202,25 @@ section{padding:60px 0}
 .revs{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
   scroll-behavior:smooth;padding:4px 0 6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .revs::-webkit-scrollbar{display:none}
-.rev{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;
-  border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column}
+.rev{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;background:#fff;
+  border:1px solid var(--line);border-radius:16px;padding:26px 24px 22px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden;
+  box-shadow:0 10px 26px rgba(11,58,93,.08)}
+/* an oversized quote glyph gives the card some presence without extra weight */
+.rev::before{content:"\201C";position:absolute;top:2px;right:18px;font-size:82px;line-height:1;
+  color:var(--blue);opacity:.2;font-family:Georgia,"Times New Roman",serif;pointer-events:none}
+.revtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;
+  position:relative;z-index:1}
+.gmark{width:19px;height:19px;flex:none;opacity:.95}
+.revwho{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);
+  padding-top:15px;margin-top:auto}
+.avat{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;
+  color:#fff;font-weight:800;font-size:17px;letter-spacing:.01em}
+.revwho b{display:block;font-size:15px;color:var(--ink);line-height:1.25}
+.revwho span{font-size:13.5px;color:var(--muted)}
 @media(max-width:940px){.rev{flex:0 0 calc((100% - 16px)/2)}}
 @media(max-width:640px){.rev{flex:0 0 100%}}
-.revnav{display:flex;gap:10px;align-items:center;margin-top:18px}
+.revnav{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:22px}
 .revnav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;
   color:var(--navy);cursor:pointer;display:grid;place-items:center;transition:background .15s,border-color .15s}
 .revnav button:hover:not([disabled]){background:var(--blue-soft);border-color:var(--blue)}
@@ -198,10 +228,8 @@ section{padding:60px 0}
 .revnav .dots{display:flex;gap:7px;margin-left:6px}
 .revnav .dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:background .2s,width .2s}
 .revnav .dots i.on{background:var(--navy);width:20px;border-radius:4px}
-.stars{color:#f5a623;letter-spacing:2px;font-size:14px;margin-bottom:10px}
-.rev p{margin:0 0 14px;font-size:14.5px;line-height:1.55;color:#33454f;flex:1}
-.rev footer{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:11px}
-.rev footer b{color:var(--ink);display:block;font-size:14.5px}
+.stars{color:#f5a623;letter-spacing:3px;font-size:17px;line-height:1}
+.rev p{margin:0 0 18px;font-size:14.5px;line-height:1.6;color:#33454f;flex:1;position:relative;z-index:1}
 
 /* districts */
 .band{background:var(--navy);color:#fff}
@@ -391,21 +419,21 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
   <div class="wrap">
     <h2>Cenník Super Vodár Bratislava</h2>
     <p class="lead">Väčšina vodoinštalačných prác si vyžaduje oboznámenie sa s problémom zákazníka. Naši profesionáli vedia poradiť aj s nákupom náhradných dielov.</p>
-    <div class="prices">
-      <div class="price">
-        <div class="pic"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 7h-3V6a3 3 0 0 0-3-3H5a2 2 0 0 0-2 2v10h2a3 3 0 0 0 6 0h2a3 3 0 0 0 6 0h2v-5l-2-3Zm-1 2 1.5 2H16V9h2ZM8 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg></div>
+    <div class="pricepanel">
+      <div class="pitem free">
+        <div class="pic"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 7h-3V6a3 3 0 0 0-3-3H5a2 2 0 0 0-2 2v10h2a3 3 0 0 0 6 0h2a3 3 0 0 0 6 0h2v-5l-2-3Zm-1 2 1.5 2H16V9h2ZM8 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg></div>
         <h3>Dojazd</h3>
         <div class="val">Zadarmo</div>
         <p class="desc">Dojazd k zákazníkovi v Bratislave</p>
       </div>
-      <div class="price">
-        <div class="pic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="m9.2 14.4 1.9 1.9 3.7-3.9"/></svg></div>
+      <div class="pitem free">
+        <div class="pic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="m9.2 14.4 1.9 1.9 3.7-3.9"/></svg></div>
         <h3>Cenová ponuka</h3>
         <div class="val">Zadarmo</div>
         <p class="desc">Cenová ponuka služby u zákazníka</p>
       </div>
-      <div class="price custom">
-        <div class="pic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M8 7h8M8 11.5h3M8 15.5h3M15 11.5h1M15 15.5h1"/></svg></div>
+      <div class="pitem">
+        <div class="pic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M8 7h8M8 11.5h3M8 15.5h3M15 11.5h1M15 15.5h1"/></svg></div>
         <h3>Cenník</h3>
         <div class="val">Individuálna cena</div>
         <p class="desc">Cenník je individuálny podľa druhu a rozsahu práce</p>
@@ -423,6 +451,10 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
 <section class="tint slant">
   <div class="wrap">
     <div class="about">
+      <figure class="aphoto">
+        <img src="../cdn-assets/cdn.bitrix24.pl/b20237281/landing/205/20547ae6b6b0602da7de2a132b18c84c/maxresdefault_2x_1x.jpg" alt="Vodár pri práci v Bratislave" loading="lazy" width="640" height="360">
+        <figcaption><b>12</b><span>rokov skúseností s vodoinštaláciami v Bratislave</span></figcaption>
+      </figure>
       <div>
         <h2>Vodár Bratislava</h2>
         <p>Vodoinštalačné práce vykonávame už 12 rokov. Pri svojej práci čerpáme z bohatých skúseností, pričom sa venujeme neustálemu sledovaniu nových trendov a technológií. O tom, že sme odborníkmi vo svojom odbore, hovorí aj množstvo spokojných klientov, ktorí sa k nám radi vracajú.</p>
@@ -430,14 +462,14 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
         <p>Nemáte radi, keď po opravárovi zostane v domácnosti kopec neporiadku? Naším cieľom je vaša spokojnosť. Všetko po sebe upraceme a vy si budete môcť ďalej užívať príjemné pohodlie vášho domova.</p>
         <p class="sig">Váš Super Vodár Bratislava</p>
       </div>
-      <ul class="checks">
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>Vodoinštalačné služby v Bratislave poskytujeme už mnoho rokov</li>
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>Môžeme garantovať maximálnu profesionalitu poskytovaných služieb</li>
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>Nie je pre nás nič cennejšie ako spokojnosť zákazníka</li>
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>Od pondelka do nedele. Každú hodinu — tak fungujeme.</li>
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>S nami vyriešite akýkoľvek problém v oblasti vodoinštalácie</li>
-      </ul>
     </div>
+    <ul class="checks">
+      <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg></span>Vodoinštalačné služby v Bratislave poskytujeme už mnoho rokov</li>
+      <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg></span>Môžeme garantovať maximálnu profesionalitu poskytovaných služieb</li>
+      <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg></span>Nie je pre nás nič cennejšie ako spokojnosť zákazníka</li>
+      <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg></span>Od pondelka do nedele. Každú hodinu — tak fungujeme.</li>
+      <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg></span>S nami vyriešite akýkoľvek problém v oblasti vodoinštalácie</li>
+    </ul>
     <div class="cta-strip">
       <p>Radi vám pomôžeme — ozvite sa.</p>
       <a class="btn btn-call" href="tel:+421940790083">
@@ -564,8 +596,19 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
     ['Barbora','Podunajské Biskupice','S pánom inštalatérom sme boli veľmi spokojní. Potrebovala som opraviť toaletu, zavolali sme a do hodiny prišiel. Dohodli sme sa na cene a hneď to opravil.'],
     ['Patrik','Karlova Ves','Cena bola taká, akú sme si dohodli po telefóne. Vodár prišiel hneď nasledujúci deň. Rýchla a kvalitná práca, môžem len odporučiť.']
   ];
-  document.getElementById('opinie').innerHTML = REVIEWS.map(function(r){
-    return '<div class="rev"><div class="stars">★★★★★</div><p>'+r[2]+'</p><footer><b>'+r[0]+'</b>'+r[1]+'</footer></div>';
+  // These are Google reviews, so each card carries the Google mark; the initial
+  // avatar gives the block a human face without needing real photos.
+  var GLOGO = P + 'f40/f40bf46204c63154383175299cefcbb8/985_google_g_icon_1x_11zon_2x.webp';
+  var AVCOL = ['#0b3a5d', '#12a150', '#12507d', '#b4651a', '#6d3d8c', '#1d6ea8'];
+  document.getElementById('opinie').innerHTML = REVIEWS.map(function(r, i){
+    return '<article class="rev">'+
+      '<div class="revtop"><div class="stars">★★★★★</div>'+
+      '<img class="gmark" src="'+GLOGO+'" alt="Hodnotenie na Google" loading="lazy" width="19" height="19"></div>'+
+      '<p>'+r[2]+'</p>'+
+      '<div class="revwho">'+
+        '<span class="avat" style="background:'+AVCOL[i % AVCOL.length]+'">'+r[0].charAt(0)+'</span>'+
+        '<span><b>'+r[0]+'</b><span>'+r[1]+'</span></span>'+
+      '</div></article>';
   }).join('');
 
   // Reviews carousel: native scroll-snap, so touch swipe works for free and the
