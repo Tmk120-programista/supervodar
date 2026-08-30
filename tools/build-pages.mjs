@@ -243,6 +243,8 @@ const webPage = (slug, title, desc, img) => ([
   },
 ]);
 
+const providerRef = { '@id': SITE + '/#business' };
+
 const crumbs = (name, slug) => ({
   '@type': 'BreadcrumbList',
   '@id': SITE + '/' + slug + '/#breadcrumb',
@@ -252,8 +254,9 @@ const crumbs = (name, slug) => ({
   ],
 });
 
-const faqLd = (faq) => ({
+const faqLd = (faq, slug) => ({
   '@type': 'FAQPage',
+  '@id': SITE + '/' + slug + '/#faq',
   mainEntity: faq.map(([q, a]) => ({
     '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a },
   })),
@@ -272,15 +275,16 @@ function buildService(s) {
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
+      provider,
       {
         '@type': 'Service', '@id': SITE + '/' + s.slug + '/#service',
         name: s.h1, serviceType: s.nav, description: s.desc,
         url: SITE + '/' + s.slug + '/',
         areaServed: { '@type': 'City', name: 'Bratislava' },
-        provider,
+        provider: providerRef,
       },
       crumbs(s.nav, s.slug),
-      faqLd(s.faq),
+      faqLd(s.faq, s.slug),
       ...webPage(s.slug, s.title, s.desc, s.hero || s.img),
     ],
   };
@@ -384,6 +388,7 @@ function buildDistrict(d) {
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
+      provider,
       {
         '@type': 'Service', '@id': SITE + '/' + d.slug + '/#service',
         name: 'Vodár ' + d.name, serviceType: 'Vodoinštalatérske služby',
@@ -392,10 +397,10 @@ function buildDistrict(d) {
           '@type': 'Place', name: d.name,
           address: { '@type': 'PostalAddress', addressLocality: 'Bratislava - ' + d.name, addressCountry: 'SK' },
         },
-        provider,
+        provider: providerRef,
       },
       crumbs('Vodár ' + d.name, d.slug),
-      faqLd(allFaq),
+      faqLd(allFaq, d.slug),
       ...webPage(d.slug, d.title, d.desc, heroImg),
     ],
   };
