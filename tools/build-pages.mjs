@@ -52,7 +52,7 @@ const EXTRA_CSS = `<style>
 
 const PHONE_SVG = '<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg>';
 const CHECK = '<span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg></span>';
-const GLOGO = 'cdn-assets/cdn.bitrix24.pl/b20237281/landing/f40/f40bf46204c63154383175299cefcbb8/985_google_g_icon_1x_11zon_2x.webp';
+const GLOGO = 'img/google.webp';
 const AVCOL = ['#0b3a5d', '#12a150', '#12507d', '#b4651a', '#6d3d8c', '#1d6ea8'];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -242,7 +242,7 @@ function buildService(s) {
   const districtChips = DISTRICTS.map((d) => ['../' + d.slug + '/', 'Vodár ' + d.name]);
 
   return head({ title: s.title, desc: s.desc, slug: s.slug, img: s.img, jsonld, canonical: s.canonical })
-    + hero({ h1: s.h1, lead: s.lead, img: s.img, crumbLabel: s.nav })
+    + hero({ h1: s.h1, lead: s.lead, img: s.hero || s.img, crumbLabel: s.nav })
     + `<section>
   <div class="wrap">
     <div class="about">
@@ -351,7 +351,7 @@ function buildDistrict(d) {
   };
 
   const h1 = 'Vodár ' + d.name + ' — inštalatér pre celú mestskú časť';
-  const heroImg = svcBySlug[d.top[0]] ? svcBySlug[d.top[0]].img : SERVICES[0].img;
+  const heroImg = svcBySlug[d.top[0]] ? (svcBySlug[d.top[0]].hero || svcBySlug[d.top[0]].img) : SERVICES[0].img;
   const revs = pickReviews((r) => r.slugD === d.slug);
   const hasLocal = REVIEWS.some((r) => r.slugD === d.slug);
   const near = (d.near || []).filter((n) => distBySlug[n]).map((n) => ['../' + n + '/', 'Vodár ' + distBySlug[n].name]);
@@ -445,4 +445,28 @@ for (const d of DISTRICTS) {
   fs.writeFileSync(path.join(DOCS, d.slug, 'index.html'), buildDistrict(d));
   n++;
 }
+
+// GitHub Pages serves docs/404.html for any unknown path.
+const notFound = head({
+  title: 'Stránka sa nenašla | Super Vodár Bratislava',
+  desc: 'Táto stránka neexistuje. Vodár a inštalatér v Bratislave — volajte 0940 790 083, dojazd zadarmo.',
+  slug: '404', img: 'img/hero-1920.webp',
+  jsonld: { '@context': 'https://schema.org', '@graph': [provider] },
+})
+  .replace(/<link rel="canonical"[^>]*>/, '<meta name="robots" content="noindex">')
+  .replace(/href="\.\.\//g, 'href="/')
+  .replace(/src="\.\.\//g, 'src="/')
+  + '<div class="hero" id="top"><img src="/img/hero-1920.webp" alt="Super Vodár Bratislava" width="1920" height="646">'
+  + '<div class="wrap"><h1>Túto stránku sme nenašli</h1>'
+  + '<p class="sub">Odkaz je zrejme starý alebo obsahuje preklep. Skúste to znova z domovskej stránky — alebo rovno zavolajte, vybavíme to rýchlejšie.</p>'
+  + '<div class="cta-row"><a class="btn btn-call" href="tel:' + TEL + '">' + PHONE_SVG + ' ' + TEL_TXT + '</a>'
+  + '<a class="btn btn-ghost" href="/">Domovská stránka</a></div></div></div>'
+  + '<section><div class="wrap"><h2>Možno ste hľadali</h2>'
+  + '<p class="lead" style="margin-bottom:24px">Najčastejšie vyhľadávané služby.</p>'
+  + svcCards(['WC', 'montazbaterii', 'Krtkovanie', 'kurenie', 'bojler', 'sprchovekuty'])
+      .replace(/href="\.\.\//g, 'href="/').replace(/src="\.\.\//g, 'src="/')
+  + '</div></section>'
+  + tail.replace(/href="\.\.\//g, 'href="/').replace(/src="\.\.\//g, 'src="/');
+fs.writeFileSync(path.join(DOCS, '404.html'), notFound);
+console.log('404.html: gotowy');
 console.log('wygenerowanych stron: ' + n + ' (' + SERVICES.length + ' uslug + ' + DISTRICTS.length + ' dzielnic)');

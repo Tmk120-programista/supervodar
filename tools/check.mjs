@@ -30,6 +30,12 @@ for (const file of targets) {
     refs.add(s.split('#')[0].split('?')[0]);
   };
 
+  // A leading slash means the site root, not the filesystem root.
+  const resolveRef = (ref) => {
+    const clean = decodeURIComponent(ref);
+    return clean.startsWith('/') ? path.join(ROOT, clean) : path.resolve(dir, clean);
+  };
+
   for (const m of text.matchAll(/\b(?:href|src|poster|data-src|data-original|data-lazyload-src)\s*=\s*(["'])([^"']*)\1/gi)) push(m[2]);
   for (const m of text.matchAll(/\b(?:srcset|data-srcset)\s*=\s*(["'])([^"']*)\1/gi))
     for (const part of m[2].split(',')) push(part.trim().split(/\s+/)[0]);
@@ -38,7 +44,7 @@ for (const file of targets) {
   for (const ref of refs) {
     if (!ref) continue;
     checked++;
-    let target = path.resolve(dir, decodeURIComponent(ref));
+    let target = resolveRef(ref);
     if (ref.endsWith('/') || !path.extname(target)) {
       if (fs.existsSync(target) && fs.statSync(target).isDirectory()) target = path.join(target, 'index.html');
     }

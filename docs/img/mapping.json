@@ -1,0 +1,187 @@
+{
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/b6a/b6ab2a5919eecfe4749610065af0864d/AdobeStock_382341959_2x.jpeg": [
+  {
+   "name": "hero-1920.webp",
+   "width": 1920,
+   "bytes": 71400
+  },
+  {
+   "name": "hero-960.webp",
+   "width": 960,
+   "bytes": 26886
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/205/20547ae6b6b0602da7de2a132b18c84c/maxresdefault_2x_1x.jpg": [
+  {
+   "name": "o-nas.webp",
+   "width": 540,
+   "bytes": 13596
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/a86/a864a51f04e516f7d741c87a51890d0f/876NP3npUMc_2x_1x_1_2x.webp": [
+  {
+   "name": "s-wc.webp",
+   "width": 540,
+   "bytes": 4666
+  },
+  {
+   "name": "h-wc.webp",
+   "width": 540,
+   "bytes": 4386
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/6f9/6f9cc79ea137876fc8c6720ce79708a9/8jQC5RHWuSE_2x_2x.jpg": [
+  {
+   "name": "s-montazbaterii.webp",
+   "width": 800,
+   "bytes": 7436
+  },
+  {
+   "name": "h-montazbaterii.webp",
+   "width": 1080,
+   "bytes": 10056
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/87e/87ee837172920482c7c9c3d15261dbb8/yzewo1jNMLw_2x_1x.jpg": [
+  {
+   "name": "s-krtkovanie.webp",
+   "width": 540,
+   "bytes": 14892
+  },
+  {
+   "name": "h-krtkovanie.webp",
+   "width": 540,
+   "bytes": 13816
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/b0f/b0f0b80bf3a32a9d7f9e8bec80950bb6/ihx1LdtnGXw_2x_1x_1_1x_11zon_2x.webp": [
+  {
+   "name": "s-kurenie.webp",
+   "width": 540,
+   "bytes": 8516
+  },
+  {
+   "name": "h-kurenie.webp",
+   "width": 540,
+   "bytes": 7962
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/9eb/9ebdd3b1839243cc40694e7dafc76cc0/Water-Heater-Repair-Atlanta_2x.jpg": [
+  {
+   "name": "s-bojler.webp",
+   "width": 800,
+   "bytes": 17146
+  },
+  {
+   "name": "h-bojler.webp",
+   "width": 1200,
+   "bytes": 26520
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/572/57226e5ac8134d5fe7e368d5d28f7f33/Zrzut_ekranu_2022-02-5_o_23.26.48_2x_1x.png": [
+  {
+   "name": "s-sprchovekuty.webp",
+   "width": 540,
+   "bytes": 8336
+  },
+  {
+   "name": "h-sprchovekuty.webp",
+   "width": 540,
+   "bytes": 7738
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/7ae/7aeb816e5c862bea5eb34af126c1e674/9hKbr86_LhA_2x_1x.jpg": [
+  {
+   "name": "s-prackaumyvacka.webp",
+   "width": 540,
+   "bytes": 5050
+  },
+  {
+   "name": "h-prackaumyvacka.webp",
+   "width": 540,
+   "bytes": 4720
+  },
+  {
+   "name": "s-prackaumyvacka-wemr.webp",
+   "width": 540,
+   "bytes": 5050
+  },
+  {
+   "name": "h-prackaumyvacka-wemr.webp",
+   "width": 540,
+   "bytes": 4720
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/70e/70e52a31f92690f69c237afeb6158a37/BK3h3qXspQU_2x_2x.jpg": [
+  {
+   "name": "s-montazdrezu.webp",
+   "width": 800,
+   "bytes": 8172
+  },
+  {
+   "name": "h-montazdrezu.webp",
+   "width": 1080,
+   "bytes": 11328
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/85a/85ac2d1c2f52033d2a6ad4f665369ac6/Zrzut_ekranu_2022-02-5_o_16.18.24_2x_1x.png": [
+  {
+   "name": "s-sifon.webp",
+   "width": 540,
+   "bytes": 7390
+  },
+  {
+   "name": "h-sifon.webp",
+   "width": 540,
+   "bytes": 6856
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/857/857aa4e08e16683dc331c9d0b0d0e45a/Zrzut_ekranu_2022-02-5_o_23.53.05_2x_1x.png": [
+  {
+   "name": "s-ventily.webp",
+   "width": 540,
+   "bytes": 8144
+  },
+  {
+   "name": "h-ventily.webp",
+   "width": 540,
+   "bytes": 7578
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/811/811c26617281a6b25059051f0c894a8e/1734279928082_2x_2x.jpg": [
+  {
+   "name": "s-geberit.webp",
+   "width": 800,
+   "bytes": 11018
+  },
+  {
+   "name": "h-geberit.webp",
+   "width": 809,
+   "bytes": 10474
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/97a/97af98926313721eaa9b4b39d55086a0/iStock-637862172_1x.jpg": [
+  {
+   "name": "s-cerpadla.webp",
+   "width": 540,
+   "bytes": 35184
+  },
+  {
+   "name": "h-cerpadla.webp",
+   "width": 540,
+   "bytes": 33228
+  }
+ ],
+ "cdn-assets/cdn.bitrix24.pl/b20237281/landing/05a/05a009235a64f7c26638aa740e20e100/silicone_to_shower_door_2x_1x.jpg": [
+  {
+   "name": "s-silikonovanie.webp",
+   "width": 540,
+   "bytes": 14976
+  },
+  {
+   "name": "h-silikonovanie.webp",
+   "width": 540,
+   "bytes": 14010
+  }
+ ]
+}

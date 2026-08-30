@@ -114,7 +114,7 @@ export const DISTRICTS = [
     slug: 'raca',
     name: 'Rača',
     title: 'Vodár Rača Bratislava | Inštalatér — dojazd zadarmo',
-    desc: 'Vodár a inštalatér pre Raču. Rodinné domy aj byty — rozvody, kúrenie, čerpadlá, opravy a montáže. Volajte 0940 790 083.',
+    desc: 'Vodár a inštalatér pre Raču. Rodinné domy aj byty — rozvody, uzávery, kúrenie, čerpadlá aj zazimovanie záhradných výtokov. Dojazd zadarmo. Volajte 0940 790 083.',
     lead: 'Rača si zachovala charakter mestskej časti s rodinnými domami a vinohradmi, ku ktorým pribudli novšie bytové projekty.',
     intro: [
       'Pri rodinných domoch riešime iné veci než v paneláku. Prichádzajú do hry rozvody vedené v zemi, vonkajšie kohúty, čerpadlá a kúrenie s väčšou sústavou, ktorá sa častejšie zavzdušňuje.',
@@ -222,7 +222,7 @@ export const DISTRICTS = [
     slug: 'zahorskabystrica',
     name: 'Záhorská Bystrica',
     title: 'Vodár Záhorská Bystrica | Inštalatér Bratislava',
-    desc: 'Vodár a inštalatér pre Záhorskú Bystricu. Rodinné domy, rozvody, čerpadlá, kúrenie aj novostavby. Volajte 0940 790 083.',
+    desc: 'Vodár a inštalatér pre Záhorskú Bystricu. Novostavby aj staršie rodinné domy — rozvody, čerpadlá, kúrenie a dokončovacie práce. Dojazd zadarmo. Volajte 0940 790 083.',
     lead: 'V Záhorskej Bystrici prevažujú rodinné domy vrátane novšej výstavby — a s nimi rozsiahlejšie vodoinštalácie.',
     intro: [
       'Pri novostavbách býva najčastejšou požiadavkou dokončenie a odladenie toho, čo zostalo po hrubej stavbe: montáž batérií, osadenie sanity, zapojenie spotrebičov, doplnenie uzáverov tam, kde chýbajú.',

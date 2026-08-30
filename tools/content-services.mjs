@@ -10,7 +10,8 @@ export const SERVICES = [
     title: 'Oprava a výmena WC Bratislava | Vodár — dojazd zadarmo',
     desc: 'Pretekajúce WC, nefunkčné splachovanie, prasknutá nádržka. Opravíme aj vymeníme záchod v Bratislave. Dojazd zadarmo, cena vopred. Volajte 0940 790 083.',
     lead: 'Záchod je jediné zariadenie v byte, ktoré musí fungovať vždy. Keď prestane, opravíme ho spravidla na jednu návštevu — vrátane náhradných dielov.',
-    img: IMG + 'a86/a864a51f04e516f7d741c87a51890d0f/876NP3npUMc_2x_1x_1_2x.webp',
+    img: 'img/s-wc.webp',
+    hero: 'img/h-wc.webp',
     intro: [
       'Najčastejšia porucha, ku ktorej nás volajú, je pretekajúca nádržka. Voda tichým prúdom uniká do misy dvadsaťštyri hodín denne a majiteľ si to všimne až na vyúčtovaní. Príčinou býva opotrebovaný napúšťací alebo vypúšťací ventil — diel za pár eur, ktorý dokáže za rok prečerpať desiatky kubíkov vody.',
       'Druhá skupina sú netesnosti na spoji medzi misou a nádržkou alebo na dosadnutí misy k podlahe. Tu už nejde len o účet za vodu: vlhkosť sa podpíše na podlahe a v panelovom dome aj na strope suseda pod vami.',
@@ -38,7 +39,8 @@ export const SERVICES = [
     title: 'Výmena batérie Bratislava | Montáž vodovodnej batérie',
     desc: 'Kvapkajúca alebo netesniaca batéria v kúpeľni či kuchyni. Vymeníme, opravíme a namontujeme novú. Poradíme s výberom aj kúpime. Volajte 0940 790 083.',
     lead: 'Kvapkajúca batéria nie je kozmetická chyba. Kvapka za sekundu znamená vyše tisíc litrov vody za rok — a účet, ktorý platíte úplne zbytočne.',
-    img: IMG + '6f9/6f9cc79ea137876fc8c6720ce79708a9/8jQC5RHWuSE_2x_2x.jpg',
+    img: 'img/s-montazbaterii.webp',
+    hero: 'img/h-montazbaterii.webp',
     intro: [
       'Pri väčšine dnešných pákových batérií je vinníkom opotrebovaná kartuša. Je to vymeniteľná vložka, ktorá dávkuje teplú a studenú vodu, a po rokoch používania prestane tesniť. Ak je batéria kvalitná a inak v poriadku, výmena kartuše býva lacnejšia než celá nová batéria.',
       'Horšie to býva pri lacných batériách z hobbymarketu, kde sa kartuša nedá kúpiť samostatne alebo je telo batérie skorodované zvnútra. Vtedy odporúčam výmenu — a rovno vysvetlím, prečo sa oplatí priplatiť si za kus, ktorý vydrží.',
@@ -66,7 +68,8 @@ export const SERVICES = [
     title: 'Krtkovanie Bratislava | Prečistenie upchatého potrubia',
     desc: 'Upchatý odpad, drez, WC alebo sprcha. Strojové krtkovanie kanalizácie v Bratislave. Odstránime príčinu, nie len následok. Volajte 0940 790 083.',
     lead: 'Upchatý odpad sa málokedy zapchá zo dňa na deň. Väčšinou ide o roky usadeného tuku a vlasov — a práve preto ho nevyrieši vylievanie chémie do drezu.',
-    img: IMG + '87e/87ee837172920482c7c9c3d15261dbb8/yzewo1jNMLw_2x_1x.jpg',
+    img: 'img/s-krtkovanie.webp',
+    hero: 'img/h-krtkovanie.webp',
     intro: [
       'Kuchynský odpad sa upcháva zvnútra: tuk z riadu tuhne na stenách potrubia a postupne zužuje priemer, až kým neprejde ani voda. Chemické prípravky prepália malý otvor uprostred nánosu, voda odtečie a majiteľ má pocit, že problém zmizol. O pár týždňov sa vráti.',
       'Strojové krtkovanie funguje inak — špirála zoškrabe usadeninu po celom obvode potrubia až po pôvodný priemer. Rozdiel spoznáte podľa toho, ako rýchlo odteká voda po zásahu a ako dlho to vydrží.',
@@ -94,7 +97,8 @@ export const SERVICES = [
     title: 'Servis kúrenia Bratislava | Oprava a výmena radiátorov',
     desc: 'Studený radiátor, zavzdušnené kúrenie, netesniaci ventil. Opravy a výmeny radiátorov aj servis ústredného kúrenia v Bratislave. Volajte 0940 790 083.',
     lead: 'Studený radiátor uprostred vykurovacej sezóny má zvyčajne jednoduchú príčinu. Horšie je, keď sa na ňu príde až vtedy, keď vonku mrzne.',
-    img: IMG + 'b0f/b0f0b80bf3a32a9d7f9e8bec80950bb6/ihx1LdtnGXw_2x_1x_1_1x_11zon_2x.webp',
+    img: 'img/s-kurenie.webp',
+    hero: 'img/h-kurenie.webp',
     intro: [
       'Ak je radiátor hore studený a dole teplý, takmer vždy ide o vzduch v sústave. Odvzdušnenie je otázka minút, ale ak sa vzduch vracia opakovane, príčina je inde — v netesnosti, cez ktorú sústava nasáva vzduch, alebo v nedostatočnom tlaku.',
       'Druhý typický prípad je zatuhnutý termostatický ventil. Hlavicu otáčate, ale kolík pod ňou sa nehýbe, takže radiátor zostane trvalo studený alebo naopak trvalo horúci. Ventil sa dá často uvoľniť, inokedy ho treba vymeniť.',
@@ -122,7 +126,8 @@ export const SERVICES = [
     title: 'Výmena bojlera Bratislava | Montáž a oprava ohrievačov',
     desc: 'Bez teplej vody? Montáž, oprava a výmena bojlerov aj prietokových ohrievačov v Bratislave vrátane pripojenia. Volajte 0940 790 083.',
     lead: 'Bojler je zariadenie, ktoré roky pracuje bez povšimnutia — až kým jedného rána netečie teplá voda alebo sa neobjaví mláka pod ním.',
-    img: IMG + '9eb/9ebdd3b1839243cc40694e7dafc76cc0/Water-Heater-Repair-Atlanta_2x.jpg',
+    img: 'img/s-bojler.webp',
+    hero: 'img/h-bojler.webp',
     intro: [
       'Najčastejšou príčinou toho, že bojler prestane hriať, býva vyhorené vykurovacie teleso alebo pokazený termostat. Oboje sa dá vymeniť a je to podstatne lacnejšie než nový bojler — pokiaľ je nádoba v poriadku.',
       'Skutočný koniec životnosti prichádza vtedy, keď presakuje samotná nádoba. Vtedy už oprava nemá zmysel a jediné riešenie je výmena. Rozdiel viete spoznať aj sami: voda netečie z pripojenia, ale odspodu telesa.',
@@ -150,7 +155,8 @@ export const SERVICES = [
     title: 'Montáž sprchového kúta Bratislava | Vodár a inštalatér',
     desc: 'Montáž sprchového kúta na kľúč — rozvody vody, vaničku, osadenie aj silikónovanie. Vodár v Bratislave, dojazd zadarmo. Volajte 0940 790 083.',
     lead: 'Sprchový kút je zariadenie, kde sa každá nepresnosť pri montáži prejaví vodou na podlahe. Preto je dôležité, kto ho osádza.',
-    img: IMG + '572/57226e5ac8134d5fe7e368d5d28f7f33/Zrzut_ekranu_2022-02-5_o_23.26.48_2x_1x.png',
+    img: 'img/s-sprchovekuty.webp',
+    hero: 'img/h-sprchovekuty.webp',
     intro: [
       'Montáž sprchového kúta nie je len postavenie skiel. Začína sa prípravou odpadu a rozvodov vody, pokračuje osadením vaničky do roviny a končí silikónovaním, ktoré musí byť spojité po celom obvode. Ak sa vanička osadí čo i len mierne šikmo, voda si nájde cestu von.',
       'Robíme aj výmeny — demontáž starého kúta alebo vane, úpravu obkladu v mieste zásahu a osadenie nového. Pri výmene vane za sprchový kút riešime aj výšku odpadu, ktorá býva pri panelových bytoch najväčším obmedzením.',
@@ -178,7 +184,8 @@ export const SERVICES = [
     title: 'Zapojenie práčky a umývačky Bratislava | Vodár',
     desc: 'Odborné zapojenie práčky a umývačky riadu na vodu a odpad v Bratislave. So zárukou tesnosti, dojazd zadarmo. Volajte 0940 790 083.',
     lead: 'Zle zapojená práčka sa neprejaví hneď. Prejaví sa o mesiac, keď spoj povolí počas odstreďovania a voda skončí u suseda.',
-    img: IMG + '7ae/7aeb816e5c862bea5eb34af126c1e674/9hKbr86_LhA_2x_1x.jpg',
+    img: 'img/s-prackaumyvacka.webp',
+    hero: 'img/h-prackaumyvacka.webp',
     intro: [
       'Pri zapojení spotrebiča na vodu ide o tri veci: správne osadený rohový ventil, tesný spoj prívodnej hadice a odpad vyvedený tak, aby nedochádzalo k spätnému nasávaniu. Každá z nich sa dá urobiť narýchlo — a každá sa vypomstí.',
       'Umývačka riadu má navyše vlastné špecifikum: odpadovú hadicu treba viesť cez takzvanú slučku, inak môže odpadová voda pretiecť späť do spotrebiča. Pri montáži do kuchynskej linky riešime aj to, aby sa hadice nezalomili po zasunutí spotrebiča na miesto.',
@@ -206,7 +213,8 @@ export const SERVICES = [
     title: 'Zapojenie spotrebičov na vodu | Vodár Bratislava',
     desc: 'Pripojenie práčky, umývačky a ďalších spotrebičov na rozvody vody a odpad v Bratislave. Vodár s 12-ročnou praxou. Volajte 0940 790 083.',
     lead: 'Pripojenie spotrebiča na vodu je krátka práca, ktorej následky sú dlhé. Robíme ju tak, aby ste sa k nej už nemuseli vracať.',
-    img: IMG + '7ae/7aeb816e5c862bea5eb34af126c1e674/9hKbr86_LhA_2x_1x.jpg',
+    img: 'img/s-prackaumyvacka-wemr.webp',
+    hero: 'img/h-prackaumyvacka-wemr.webp',
     canonical: 'prackaumyvacka',
     intro: [
       'Túto stránku sme ponechali pre zákazníkov, ktorí sa k nám dostali cez starší odkaz. Obsahovo ide o tú istú službu ako zapojenie práčky a umývačky riadu.',
@@ -231,7 +239,8 @@ export const SERVICES = [
     title: 'Montáž drezu a umývadla Bratislava | Vodár',
     desc: 'Osadenie a pripojenie drezu, umývadla aj batérie v Bratislave. Starý kus odpojíme a odvezieme. Dojazd zadarmo. Volajte 0940 790 083.',
     lead: 'Drez a umývadlo vyzerajú ako stolárska práca, ale všetko podstatné sa deje pod nimi — v pripojení na vodu a odpad.',
-    img: IMG + '70e/70e52a31f92690f69c237afeb6158a37/BK3h3qXspQU_2x_2x.jpg',
+    img: 'img/s-montazdrezu.webp',
+    hero: 'img/h-montazdrezu.webp',
     intro: [
       'Pri osadení drezu do kuchynskej dosky rozhoduje tesnenie po obvode. Ak sa urobí nedbalo, voda sa dostane do drevotriesky a doska časom napučí — chyba, ktorú už neopravíte, len vymeníte.',
       'Pri umývadle je kritickým miestom naopak upevnenie a odpad. Zavesené umývadlo musí držať v nosnej stene alebo v pripravenej konštrukcii, inak sa po čase uvoľní. Sifón pod ním musí mať správny spád, aby odtekal a zároveň držal vodný uzáver proti zápachu.',
@@ -259,7 +268,8 @@ export const SERVICES = [
     title: 'Výmena sifónu Bratislava | Vodár a inštalatér',
     desc: 'Zapáchajúci alebo tečúci sifón pod umývadlom, drezom či vaňou. Rýchla výmena v Bratislave, dojazd zadarmo. Volajte 0940 790 083.',
     lead: 'Sifón je najlacnejšia súčiastka pod umývadlom a zároveň tá, ktorá pri zlyhaní narobí najviac škody na skrinke a podlahe.',
-    img: IMG + '85a/85ac2d1c2f52033d2a6ad4f665369ac6/Zrzut_ekranu_2022-02-5_o_16.18.24_2x_1x.png',
+    img: 'img/s-sifon.webp',
+    hero: 'img/h-sifon.webp',
     intro: [
       'Sifón plní jednu zásadnú úlohu: drží vodný uzáver, ktorý bráni zápachu z kanalizácie dostať sa do bytu. Keď z odpadu zapácha, býva príčinou vyschnutý sifón v málo používanom zariadení alebo prasknutá stena sifónu, cez ktorú uzáver uniká.',
       'Druhý typický prípad je presakovanie na spojoch. Plastové prevlečné matice po rokoch strácajú pružnosť a tesnenie tvrdne. Voda potom nekvapká viditeľne, ale steká po stene sifónu do skrinky, kde ju objavíte až podľa napučaného dna.',
@@ -287,7 +297,8 @@ export const SERVICES = [
     title: 'Výmena ventilov Bratislava | Rohové a guľové uzávery',
     desc: 'Zatuhnutý alebo netesniaci uzáver vody. Výmena rohových, guľových aj hlavných ventilov v Bratislave. Volajte 0940 790 083.',
     lead: 'Uzatvárací ventil je poistka, o ktorej si spomeniete až v momente, keď ju potrebujete. Vtedy už býva neskoro zisťovať, že sa nedá otočiť.',
-    img: IMG + '857/857aa4e08e16683dc331c9d0b0d0e45a/Zrzut_ekranu_2022-02-5_o_23.53.05_2x_1x.png',
+    img: 'img/s-ventily.webp',
+    hero: 'img/h-ventily.webp',
     intro: [
       'Rohové ventily pod umývadlom alebo za práčkou roky nikto nehýbe. Vodný kameň medzitým zablokuje vreteno a keď príde havária, ventil sa buď neotočí vôbec, alebo sa pri sile odlomí. Práve preto odporúčam ich výmenu vždy, keď sa aj tak robí zásah v ich okolí.',
       'Podobne je to s hlavným uzáverom v byte. Ak sa nedá uzavrieť, každá menšia porucha sa mení na väčšiu — namiesto pokojnej opravy sa hasí unikajúca voda.',
@@ -315,7 +326,8 @@ export const SERVICES = [
     title: 'Oprava Geberit Bratislava | Servis podomietkových nádržiek',
     desc: 'Servis podomietkových splachovačov Geberit v Bratislave vrátane náhradných dielov aj k starším modelom. Volajte 0940 790 083.',
     lead: 'Podomietková nádržka má tú nevýhodu, že je za stenou. O to dôležitejšie je, aby ju otváral niekto, kto vie, čo je za obkladom.',
-    img: IMG + '811/811c26617281a6b25059051f0c894a8e/1734279928082_2x_2x.jpg',
+    img: 'img/s-geberit.webp',
+    hero: 'img/h-geberit.webp',
     intro: [
       'Najčastejšou poruchou podomietkových systémov je netesniaci vypúšťací ventil. Voda tichým prúdom uniká do misy a keďže nádržka je skrytá, majiteľ nemá ako spozorovať, že niečo nie je v poriadku — až kým nepríde vyúčtovanie.',
       'Druhým typickým prípadom je splachovacie tlačidlo, ktoré prestane reagovať alebo zostane zatlačené. Tu býva chyba v mechanike prenosu, ktorá sa dá po demontáži tlačidla nastaviť alebo vymeniť bez zásahu do obkladu.',
@@ -343,7 +355,8 @@ export const SERVICES = [
     title: 'Čerpadlá Bratislava | Montáž, oprava a servis',
     desc: 'Montáž, oprava, výmena a servis čerpadiel v Bratislave. Poradíme s výberom výkonu. Vodár s 12-ročnou praxou. Volajte 0940 790 083.',
     lead: 'Čerpadlo je jediná pohyblivá časť vodného systému. Práve preto sa na ňom prejaví opotrebenie skôr než na čomkoľvek inom.',
-    img: IMG + '97a/97af98926313721eaa9b4b39d55086a0/iStock-637862172_1x.jpg',
+    img: 'img/s-cerpadla.webp',
+    hero: 'img/h-cerpadla.webp',
     intro: [
       'Pri domácich vodárňach a studňových čerpadlách býva najčastejším problémom strata tlaku alebo časté spínanie. Príčinou nemusí byť samotné čerpadlo — často ide o tlakovú nádobu, ktorá stratila predtlak, alebo o netesnosť na saní, cez ktorú systém nasáva vzduch.',
       'Pri obehových čerpadlách v kúrení sa opotrebenie prejaví hlukom alebo tým, že sa rotor po lete zablokuje usadeninou. Niekedy stačí čerpadlo rozhýbať, inokedy je rozumnejšia výmena za modernejšie s nižšou spotrebou.',
@@ -371,7 +384,8 @@ export const SERVICES = [
     title: 'Silikónovanie Bratislava | Škáry pri vani a sprche',
     desc: 'Plesnivý alebo popraskaný silikón pri vani, sprche či kuchynskej linke. Odstránenie starého a nanesenie nového v Bratislave. Volajte 0940 790 083.',
     lead: 'Silikónová škára je posledná bariéra medzi vodou a konštrukciou. Keď zlyhá, škoda nevzniká na povrchu, ale za obkladom.',
-    img: IMG + '05a/05a009235a64f7c26638aa740e20e100/silicone_to_shower_door_2x_1x.jpg',
+    img: 'img/s-silikonovanie.webp',
+    hero: 'img/h-silikonovanie.webp',
     intro: [
       'Silikón nezostarne rovnomerne. Najskôr sa v ňom usadí pleseň, potom sa v rohoch odtrhne od podkladu a vznikne vlásočnica, ktorou voda vsakuje pod vaňu. Zvonku pritom škára môže vyzerať ešte celkom prijateľne.',
       'Prelakovať alebo pretlačiť nový silikón cez starý je najčastejšia chyba, akú vidíme. Nový materiál nemá na čom držať a pleseň pod ním pokračuje. Preto starú škáru vždy kompletne odstránime, podklad vyčistíme, odmastíme a necháme vyschnúť.',
