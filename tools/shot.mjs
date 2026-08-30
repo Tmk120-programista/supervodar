@@ -5,7 +5,8 @@
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 
-const [url, out, w = '390', h = '844', full] = process.argv.slice(2);
+// scrollTo: pixels to scroll down before capturing, or a CSS selector to scroll to.
+const [url, out, w = '390', h = '844', scrollTo] = process.argv.slice(2);
 const CHROME = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 const PORT = 9500 + Math.floor(Math.random() * 400);
 
@@ -61,11 +62,15 @@ const probe = await call('Runtime.evaluate', {
 });
 console.log(JSON.stringify(probe.result.value, null, 1));
 
-const shot = await call('Page.captureScreenshot', {
-  format: 'png',
-  captureBeyondViewport: !!full,
-  ...(full ? { clip: { x: 0, y: 0, width: +w, height: +h, scale: 1 } } : {}),
-});
+if (scrollTo) {
+  const expr = /^\d+$/.test(scrollTo)
+    ? `window.scrollTo(0,${scrollTo})`
+    : `document.querySelector(${JSON.stringify(scrollTo)}).scrollIntoView()`;
+  await call('Runtime.evaluate', { expression: expr });
+  await sleep(1200);
+}
+
+const shot = await call('Page.captureScreenshot', { format: 'png' });
 fs.writeFileSync(out, Buffer.from(shot.data, 'base64'));
 console.log('zapisano: ' + out);
 
