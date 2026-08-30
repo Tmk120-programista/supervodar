@@ -82,12 +82,19 @@ const checkGrid = (items) =>
   `<ul class="checks">` +
   items.map((x) => `<li>${CHECK}${esc(x)}</li>`).join('\n') + `</ul>`;
 
+// browsers pick the narrowest file that still covers the slot
+const srcset = (base) => {
+  const stem = base.replace(/\.webp$/, '');
+  return ['../' + stem + '-400.webp 400w', '../' + stem + '-640.webp 640w', '../' + base + ' 800w'].join(', ');
+};
+
 const svcCards = (slugs, compact) =>
   `<div class="grid">` +
   slugs.filter((s) => svcBySlug[s]).map((s) => {
     const x = svcBySlug[s];
     return `<a class="svc" href="../${x.slug}/">` +
-      `<img src="../${x.img}" alt="${attr(x.nav)} — vodár Bratislava" loading="lazy" width="400" height="152">` +
+      `<img src="../${x.img}" srcset="${srcset(x.img)}" sizes="(max-width:640px) 92vw, (max-width:1180px) 45vw, 261px"` +
+      ` alt="${attr(x.nav)} — vodár Bratislava" loading="lazy" width="400" height="152">` +
       (compact ? `<div class="tx"><h3>${esc(x.nav)}</h3></div></a>` : `<div class="tx"><h3>${esc(x.nav)}</h3><p>${esc(x.lead)}</p></div></a>`);
   }).join('\n') + `</div>`;
 
@@ -160,6 +167,7 @@ ${JSON.stringify(jsonld)}
 </head>
 <body>
 ${HEADER.replace(/href="#top"/, 'href="../"')}
+<main id="obsah">
 `;
 }
 
@@ -184,6 +192,7 @@ ${TRUST}
 }
 
 const tail = `${CONTACT}
+</main>
 ${FOOTER}
 ${CALLBAR}
 ${SCRIPT}
@@ -491,8 +500,9 @@ const notFound = head({
   jsonld: { '@context': 'https://schema.org', '@graph': [provider] },
 })
   .replace(/<link rel="canonical"[^>]*>/, '<meta name="robots" content="noindex">')
-  .replace(/href="\.\.\//g, 'href="/')
-  .replace(/src="\.\.\//g, 'src="/')
+  // 404.html sits at the site root, so every "../" must become "/" — including
+  // the ones inside srcset, which sit after commas rather than after an =".
+  .replace(/\.\.\//g, '/')
   + '<div class="hero" id="top"><img src="/img/hero-1920.webp" alt="Super Vodár Bratislava" width="1920" height="646">'
   + '<div class="wrap"><h1>Túto stránku sme nenašli</h1>'
   + '<p class="sub">Odkaz je zrejme starý alebo obsahuje preklep. Skúste to znova z domovskej stránky — alebo rovno zavolajte, vybavíme to rýchlejšie.</p>'
@@ -501,9 +511,9 @@ const notFound = head({
   + '<section><div class="wrap"><h2>Možno ste hľadali</h2>'
   + '<p class="lead" style="margin-bottom:24px">Najčastejšie vyhľadávané služby.</p>'
   + svcCards(['WC', 'montazbaterii', 'Krtkovanie', 'kurenie', 'bojler', 'sprchovekuty'])
-      .replace(/href="\.\.\//g, 'href="/').replace(/src="\.\.\//g, 'src="/')
+      .replace(/\.\.\//g, '/')
   + '</div></section>'
-  + tail.replace(/href="\.\.\//g, 'href="/').replace(/src="\.\.\//g, 'src="/');
+  + tail.replace(/\.\.\//g, '/');
 fs.writeFileSync(path.join(DOCS, '404.html'), notFound);
 console.log('404.html: gotowy');
 console.log('wygenerowanych stron: ' + n + ' (' + SERVICES.length + ' uslug + ' + DISTRICTS.length + ' dzielnic)');

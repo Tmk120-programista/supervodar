@@ -358,6 +358,7 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
     </a>
   </div>
 </header>
+<main id="obsah">
 <div class="hero" id="top">
   <img src="../img/h-cerpadla.webp" alt="Vodár Jarovce — inštalatér pre celú mestskú časť — Super Vodár Bratislava" fetchpriority="high">
   <div class="wrap">
@@ -428,12 +429,12 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
   <div class="wrap">
     <h2>Služby, na ktoré nás sem volajú</h2>
     <p class="lead" style="margin-bottom:24px">Kliknite na službu a dozviete sa, ako pri nej postupujeme.</p>
-    <div class="grid"><a class="svc" href="../cerpadla/"><img src="../img/s-cerpadla.webp" alt="Čerpadlá — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Čerpadlá</h3></div></a>
-<a class="svc" href="../ventily/"><img src="../img/s-ventily.webp" alt="Výmena a montáž ventilov — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Výmena a montáž ventilov</h3></div></a>
-<a class="svc" href="../montazbaterii/"><img src="../img/s-montazbaterii.webp" alt="Montáž a výmena batérie — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Montáž a výmena batérie</h3></div></a>
-<a class="svc" href="../WC/"><img src="../img/s-wc.webp" alt="Oprava a výmena WC — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Oprava a výmena WC</h3></div></a>
-<a class="svc" href="../kurenie/"><img src="../img/s-kurenie.webp" alt="Montáž a servis kúrenia — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Montáž a servis kúrenia</h3></div></a>
-<a class="svc" href="../Krtkovanie/"><img src="../img/s-krtkovanie.webp" alt="Krtkovanie potrubia — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Krtkovanie potrubia</h3></div></a></div>
+    <div class="grid"><a class="svc" href="../cerpadla/"><img src="../img/s-cerpadla.webp" srcset="../img/s-cerpadla-400.webp 400w, ../img/s-cerpadla-640.webp 640w, ../img/s-cerpadla.webp 800w" sizes="(max-width:640px) 92vw, (max-width:1180px) 45vw, 261px" alt="Čerpadlá — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Čerpadlá</h3></div></a>
+<a class="svc" href="../ventily/"><img src="../img/s-ventily.webp" srcset="../img/s-ventily-400.webp 400w, ../img/s-ventily-640.webp 640w, ../img/s-ventily.webp 800w" sizes="(max-width:640px) 92vw, (max-width:1180px) 45vw, 261px" alt="Výmena a montáž ventilov — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Výmena a montáž ventilov</h3></div></a>
+<a class="svc" href="../montazbaterii/"><img src="../img/s-montazbaterii.webp" srcset="../img/s-montazbaterii-400.webp 400w, ../img/s-montazbaterii-640.webp 640w, ../img/s-montazbaterii.webp 800w" sizes="(max-width:640px) 92vw, (max-width:1180px) 45vw, 261px" alt="Montáž a výmena batérie — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Montáž a výmena batérie</h3></div></a>
+<a class="svc" href="../WC/"><img src="../img/s-wc.webp" srcset="../img/s-wc-400.webp 400w, ../img/s-wc-640.webp 640w, ../img/s-wc.webp 800w" sizes="(max-width:640px) 92vw, (max-width:1180px) 45vw, 261px" alt="Oprava a výmena WC — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Oprava a výmena WC</h3></div></a>
+<a class="svc" href="../kurenie/"><img src="../img/s-kurenie.webp" srcset="../img/s-kurenie-400.webp 400w, ../img/s-kurenie-640.webp 640w, ../img/s-kurenie.webp 800w" sizes="(max-width:640px) 92vw, (max-width:1180px) 45vw, 261px" alt="Montáž a servis kúrenia — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Montáž a servis kúrenia</h3></div></a>
+<a class="svc" href="../Krtkovanie/"><img src="../img/s-krtkovanie.webp" srcset="../img/s-krtkovanie-400.webp 400w, ../img/s-krtkovanie-640.webp 640w, ../img/s-krtkovanie.webp 800w" sizes="(max-width:640px) 92vw, (max-width:1180px) 45vw, 261px" alt="Krtkovanie potrubia — vodár Bratislava" loading="lazy" width="400" height="152"><div class="tx"><h3>Krtkovanie potrubia</h3></div></a></div>
   </div>
 </section>
 
@@ -526,6 +527,7 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
     </div>
   </div>
 </section>
+</main>
 <footer class="ft">
   <div class="wrap">
     <div>© <span id="yr"></span> Super Vodár Bratislava — vodoinštalatérske služby 24/7</div>
@@ -552,37 +554,42 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
     var cards = track.children;
     if (!cards.length) return;
 
-    function step(){
+    // Geometry is measured once and cached. Reading getBoundingClientRect on
+    // every scroll event forced a re-layout each time (~51 ms in PageSpeed).
+    var stepPx = 0, pageCount = 1, maxScroll = 0;
+    function measure(){
       var a = cards[0].getBoundingClientRect();
       var b = cards[1] ? cards[1].getBoundingClientRect().left : a.right + 16;
-      return Math.round(b - a.left) || a.width + 16;
+      stepPx = Math.round(b - a.left) || Math.round(a.width) + 16;
+      var per = Math.max(1, Math.round(track.clientWidth / stepPx));
+      pageCount = Math.max(1, cards.length - per + 1);
+      maxScroll = track.scrollWidth - track.clientWidth;
     }
-    function perView(){ return Math.max(1, Math.round(track.clientWidth / step())); }
-    function pages(){ return Math.max(1, cards.length - perView() + 1); }
 
     for (var i = 0; i < cards.length; i++) dots.appendChild(document.createElement('i'));
 
     function sync(){
-      var idx = Math.round(track.scrollLeft / step());
-      var max = pages() - 1;
-      if (idx > max) idx = max;
+      var left = track.scrollLeft;            // the only read left in this path
+      var idx = Math.min(Math.round(left / stepPx), pageCount - 1);
       for (var i = 0; i < dots.children.length; i++){
         dots.children[i].className = i === idx ? 'on' : '';
-        dots.children[i].style.display = i < pages() ? '' : 'none';
+        dots.children[i].style.display = i < pageCount ? '' : 'none';
       }
-      prev.disabled = track.scrollLeft < 4;
-      next.disabled = track.scrollLeft > track.scrollWidth - track.clientWidth - 4;
+      prev.disabled = left < 4;
+      next.disabled = left > maxScroll - 4;
     }
 
-    prev.addEventListener('click', function(){ track.scrollLeft -= step(); });
-    next.addEventListener('click', function(){ track.scrollLeft += step(); });
+    prev.addEventListener('click', function(){ track.scrollLeft -= stepPx; });
+    next.addEventListener('click', function(){ track.scrollLeft += stepPx; });
     track.addEventListener('scroll', function(){
       clearTimeout(track._t); track._t = setTimeout(sync, 60);
-    });
+    }, { passive: true });
     window.addEventListener('resize', function(){
-      clearTimeout(window._rt); window._rt = setTimeout(sync, 150);
+      clearTimeout(window._rt);
+      window._rt = setTimeout(function(){ measure(); sync(); }, 150);
     });
-    sync();
+    // defer the first measurement so it does not block first paint
+    requestAnimationFrame(function(){ measure(); sync(); });
   })();
 
   var MAIL='supervodarba@gmail.com', ENDPOINT='https://formsubmit.co/ajax/'+MAIL;
