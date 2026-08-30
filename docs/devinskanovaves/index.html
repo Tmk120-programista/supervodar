@@ -331,9 +331,15 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
 @media(max-width:940px){.revs.static{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.revs.static{grid-template-columns:1fr}}
 .revs.static .rev{flex:none}
+.probs{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);margin-top:8px}
+@media(max-width:940px){.probs{grid-template-columns:1fr}}
+.prob{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;
+  box-shadow:0 8px 22px rgba(11,58,93,.07);border-top:4px solid var(--blue)}
+.prob h3{font-size:17px;color:var(--navy);margin:0 0 10px;line-height:1.3}
+.prob p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.65}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://supervodarba.sk/devinskanovaves/#service","name":"Vodár Devínska Nová Ves","serviceType":"Vodoinštalatérske služby","description":"Vodár a inštalatér pre Devínsku Novú Ves. Byty aj rodinné domy — opravy, výmeny a montáže. Dojazd zadarmo. Volajte 0940 790 083.","url":"https://supervodarba.sk/devinskanovaves/","areaServed":{"@type":"Place","name":"Devínska Nová Ves","address":{"@type":"PostalAddress","addressLocality":"Bratislava - Devínska Nová Ves","addressCountry":"SK"}},"provider":{"@type":"Plumber","@id":"https://supervodarba.sk/#business","name":"Super Vodár Bratislava","telephone":"+421940790083","email":"supervodarba@gmail.com","url":"https://supervodarba.sk/","address":{"@type":"PostalAddress","addressLocality":"Bratislava","addressCountry":"SK"},"geo":{"@type":"GeoCoordinates","latitude":48.1012402,"longitude":17.1066393}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://supervodarba.sk/"},{"@type":"ListItem","position":2,"name":"Vodár Devínska Nová Ves","item":"https://supervodarba.sk/devinskanovaves/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dá sa u nás vymeniť vaňa za sprchový kút?","acceptedAnswer":{"@type":"Answer","text":"Vo väčšine bytov áno, ale rozhoduje výška odpadu. Overím to vopred, aby ste nekúpili vaničku, ktorá sa nedá osadiť."}},{"@type":"Question","name":"Odveziete starý bojler?","acceptedAnswer":{"@type":"Answer","text":"Áno, starý kus odpojíme, zložíme a odvezieme."}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://supervodarba.sk/devinskanovaves/#service","name":"Vodár Devínska Nová Ves","serviceType":"Vodoinštalatérske služby","description":"Vodár a inštalatér pre Devínsku Novú Ves. Byty aj rodinné domy — opravy, výmeny a montáže. Dojazd zadarmo. Volajte 0940 790 083.","url":"https://supervodarba.sk/devinskanovaves/","areaServed":{"@type":"Place","name":"Devínska Nová Ves","address":{"@type":"PostalAddress","addressLocality":"Bratislava - Devínska Nová Ves","addressCountry":"SK"}},"provider":{"@type":"Plumber","@id":"https://supervodarba.sk/#business","name":"Super Vodár Bratislava","telephone":"+421940790083","email":"supervodarba@gmail.com","url":"https://supervodarba.sk/","address":{"@type":"PostalAddress","addressLocality":"Bratislava","addressCountry":"SK"},"geo":{"@type":"GeoCoordinates","latitude":48.1012402,"longitude":17.1066393}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://supervodarba.sk/"},{"@type":"ListItem","position":2,"name":"Vodár Devínska Nová Ves","item":"https://supervodarba.sk/devinskanovaves/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dá sa u nás vymeniť vaňa za sprchový kút?","acceptedAnswer":{"@type":"Answer","text":"Vo väčšine bytov áno, ale rozhoduje výška odpadu. Overím to vopred, aby ste nekúpili vaničku, ktorá sa nedá osadiť."}},{"@type":"Question","name":"Odveziete starý bojler?","acceptedAnswer":{"@type":"Answer","text":"Áno, starý kus odpojíme, zložíme a odvezieme."}},{"@type":"Question","name":"Dá sa u nás v byte urobiť sprchový kút namiesto vane?","acceptedAnswer":{"@type":"Answer","text":"Vo väčšine prípadov áno. Rozhoduje výška odpadu v jadre — overím to vopred a poviem, aké vaničky prichádzajú do úvahy."}},{"@type":"Question","name":"Prečo sa nám kúrenie stále zavzdušňuje?","acceptedAnswer":{"@type":"Answer","text":"Znamená to, že sústava nasáva vzduch alebo stráca tlak. Treba nájsť netesnosť, inak sa odvzdušňovanie bude opakovať donekonečna."}},{"@type":"Question","name":"Chodíte aj do pôvodnej časti obce?","acceptedAnswer":{"@type":"Answer","text":"Áno, obsluhujeme celú mestskú časť vrátane zástavby rodinných domov."}}]}]}
 </script>
 </head>
 <body>
@@ -406,6 +412,18 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
   </div>
 </section>
 
+<section class="slant">
+  <div class="wrap">
+    <h2>Typické problémy v tejto mestskej časti</h2>
+    <p class="lead" style="margin-bottom:24px">Čo sa v miestnej zástavbe opakuje najčastejšie — a prečo.</p>
+    <div class="probs">
+      <article class="prob"><h3>Prerábky kúpeľní v bytoch</h3><p>Pri panelovej zástavbe rozhoduje výška odpadu, aký typ sprchovej vaničky je možný. Overujem to vopred, aby ste nekúpili kus, ktorý sa nedá osadiť. Rovnako dôležité je osadenie do roviny — nepresnosť sa prejaví vodou na podlahe.</p></article>
+      <article class="prob"><h3>Opakované zavzdušňovanie kúrenia</h3><p>Ak sa radiátory zavzdušňujú stále dokola, samotné odvzdušnenie je len dočasná úľava. Sústava buď niekde nasáva vzduch, alebo stráca tlak — a bez nájdenia príčiny sa problém o pár týždňov vráti.</p></article>
+      <article class="prob"><h3>Staršia zástavba pôvodnej obce</h3><p>V rodinných domoch pribúdajú rozvody, uzávery a vonkajšie výtoky. Ventily, ktorými sa roky nehýbalo, odporúčam vymeniť preventívne — je to lacná poistka do chvíle, keď bude treba rýchlo odstaviť vodu.</p></article>
+    </div>
+  </div>
+</section>
+
 <section class="tint slant">
   <div class="wrap">
     <h2>Služby, na ktoré nás sem volajú</h2>
@@ -470,7 +488,10 @@ footer.ft a{color:#fff;text-decoration:none;font-weight:600}
     <h2>Časté otázky</h2>
     <p class="lead">Čo sa nás pýtajú zákazníci z tejto mestskej časti.</p>
     <div class="faq"><details open><summary>Dá sa u nás vymeniť vaňa za sprchový kút?</summary><div class="ans">Vo väčšine bytov áno, ale rozhoduje výška odpadu. Overím to vopred, aby ste nekúpili vaničku, ktorá sa nedá osadiť.</div></details>
-<details><summary>Odveziete starý bojler?</summary><div class="ans">Áno, starý kus odpojíme, zložíme a odvezieme.</div></details></div>
+<details><summary>Odveziete starý bojler?</summary><div class="ans">Áno, starý kus odpojíme, zložíme a odvezieme.</div></details>
+<details><summary>Dá sa u nás v byte urobiť sprchový kút namiesto vane?</summary><div class="ans">Vo väčšine prípadov áno. Rozhoduje výška odpadu v jadre — overím to vopred a poviem, aké vaničky prichádzajú do úvahy.</div></details>
+<details><summary>Prečo sa nám kúrenie stále zavzdušňuje?</summary><div class="ans">Znamená to, že sústava nasáva vzduch alebo stráca tlak. Treba nájsť netesnosť, inak sa odvzdušňovanie bude opakovať donekonečna.</div></details>
+<details><summary>Chodíte aj do pôvodnej časti obce?</summary><div class="ans">Áno, obsluhujeme celú mestskú časť vrátane zástavby rodinných domov.</div></details></div>
     <h2 style="margin-top:46px">Susedné mestské časti</h2>
     <p class="lead" style="margin-bottom:8px">Jazdíme po celej Bratislave — dojazd je vždy zadarmo.</p>
     <div class="chips"><a class="chip" href="../devin/">Vodár Devín</a>

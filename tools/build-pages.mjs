@@ -6,6 +6,7 @@ import path from 'node:path';
 import { SERVICES } from './content-services.mjs';
 import { DISTRICTS } from './content-districts.mjs';
 import { SERVICE_EXTRA, DISTRICT_EXTRA, REVIEWS, DECL } from './content-extra.mjs';
+import { DEEP } from './content-districts-deep.mjs';
 
 const DOCS = 'docs';
 const SITE = 'https://supervodarba.sk';
@@ -41,6 +42,12 @@ const EXTRA_CSS = `<style>
 @media(max-width:940px){.revs.static{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.revs.static{grid-template-columns:1fr}}
 .revs.static .rev{flex:none}
+.probs{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);margin-top:8px}
+@media(max-width:940px){.probs{grid-template-columns:1fr}}
+.prob{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;
+  box-shadow:0 8px 22px rgba(11,58,93,.07);border-top:4px solid var(--blue)}
+.prob h3{font-size:17px;color:var(--navy);margin:0 0 10px;line-height:1.3}
+.prob p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.65}
 </style>`;
 
 const PHONE_SVG = '<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg>';
@@ -323,6 +330,8 @@ function buildService(s) {
 function buildDistrict(d) {
   const local = DISTRICT_EXTRA[d.slug] || [];
   const dc = DECL[d.slug];
+  const deep = DEEP[d.slug];
+  const allFaq = d.faq.concat(deep.faqMore);
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -337,7 +346,7 @@ function buildDistrict(d) {
         provider,
       },
       crumbs('Vodár ' + d.name, d.slug),
-      faqLd(d.faq),
+      faqLd(allFaq),
     ],
   };
 
@@ -364,6 +373,16 @@ function buildDistrict(d) {
       </div>
     </div>
     ${ctaStrip('Ste z ' + dc.gen + '? Zavolajte a dohodneme termín.')}
+  </div>
+</section>
+
+<section class="slant">
+  <div class="wrap">
+    <h2>Typické problémy v tejto mestskej časti</h2>
+    <p class="lead" style="margin-bottom:24px">Čo sa v miestnej zástavbe opakuje najčastejšie — a prečo.</p>
+    <div class="probs">
+      ${deep.problems.map(([t, x]) => '<article class="prob"><h3>' + esc(t) + '</h3><p>' + esc(x) + '</p></article>').join('\n      ')}
+    </div>
   </div>
 </section>
 
@@ -411,7 +430,7 @@ function buildDistrict(d) {
   <div class="wrap">
     <h2>Časté otázky</h2>
     <p class="lead">Čo sa nás pýtajú zákazníci z tejto mestskej časti.</p>
-    ${faqBlock(d.faq)}
+    ${faqBlock(allFaq)}
     ${near.length ? `<h2 style="margin-top:46px">Susedné mestské časti</h2>
     <p class="lead" style="margin-bottom:8px">Jazdíme po celej Bratislave — dojazd je vždy zadarmo.</p>
     ${chips(near)}` : ''}
@@ -433,6 +452,7 @@ for (const s of SERVICES) {
 for (const d of DISTRICTS) {
   if (!DISTRICT_EXTRA[d.slug]) throw new Error('chybia dodatocne data pre mestsku cast: ' + d.slug);
   if (!DECL[d.slug]) throw new Error('chybia tvary skloňovania pre: ' + d.slug);
+  if (!DEEP[d.slug]) throw new Error('chybia rozsirene texty pre: ' + d.slug);
   fs.mkdirSync(path.join(DOCS, d.slug), { recursive: true });
   fs.writeFileSync(path.join(DOCS, d.slug, 'index.html'), buildDistrict(d));
   n++;
