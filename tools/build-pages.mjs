@@ -203,8 +203,37 @@ const provider = {
   geo: { '@type': 'GeoCoordinates', latitude: 48.1012402, longitude: 17.1066393 },
 };
 
+
+const TODAY_BUILD = new Date().toISOString().slice(0, 10);
+
+// Ties a sub-page into the site graph: what it is, where it sits, what it is about.
+const webPage = (slug, title, desc, img) => ([
+  {
+    '@type': 'WebPage',
+    '@id': SITE + '/' + slug + '/#webpage',
+    url: SITE + '/' + slug + '/',
+    name: title,
+    description: desc,
+    inLanguage: 'sk',
+    isPartOf: { '@id': SITE + '/#website' },
+    about: { '@id': SITE + '/#business' },
+    breadcrumb: { '@id': SITE + '/' + slug + '/#breadcrumb' },
+    primaryImageOfPage: { '@type': 'ImageObject', url: SITE + '/' + img },
+    dateModified: TODAY_BUILD,
+  },
+  {
+    '@type': 'WebSite',
+    '@id': SITE + '/#website',
+    url: SITE + '/',
+    name: 'Super Vodár Bratislava',
+    inLanguage: 'sk',
+    publisher: { '@id': SITE + '/#business' },
+  },
+]);
+
 const crumbs = (name, slug) => ({
   '@type': 'BreadcrumbList',
+  '@id': SITE + '/' + slug + '/#breadcrumb',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Domov', item: SITE + '/' },
     { '@type': 'ListItem', position: 2, name, item: SITE + '/' + slug + '/' },
@@ -240,6 +269,7 @@ function buildService(s) {
       },
       crumbs(s.nav, s.slug),
       faqLd(s.faq),
+      ...webPage(s.slug, s.title, s.desc, s.hero || s.img),
     ],
   };
 
@@ -337,6 +367,8 @@ function buildDistrict(d) {
   const dc = DECL[d.slug];
   const deep = DEEP[d.slug];
   const allFaq = d.faq.concat(deep.faqMore);
+  // declared before the graph, which references it
+  const heroImg = svcBySlug[d.top[0]] ? (svcBySlug[d.top[0]].hero || svcBySlug[d.top[0]].img) : SERVICES[0].img;
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -352,11 +384,11 @@ function buildDistrict(d) {
       },
       crumbs('Vodár ' + d.name, d.slug),
       faqLd(allFaq),
+      ...webPage(d.slug, d.title, d.desc, heroImg),
     ],
   };
 
   const h1 = 'Vodár ' + d.name + ' — inštalatér pre celú mestskú časť';
-  const heroImg = svcBySlug[d.top[0]] ? (svcBySlug[d.top[0]].hero || svcBySlug[d.top[0]].img) : SERVICES[0].img;
   const revs = pickReviews((r) => r.slugD === d.slug);
   const hasLocal = REVIEWS.some((r) => r.slugD === d.slug);
   const near = (d.near || []).filter((n) => distBySlug[n]).map((n) => ['../' + n + '/', 'Vodár ' + distBySlug[n].name]);
