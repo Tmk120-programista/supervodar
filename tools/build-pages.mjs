@@ -53,7 +53,7 @@ const EXTRA_CSS = `<style>
 const PHONE_SVG = '<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg>';
 const CHECK = '<span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg></span>';
 const GLOGO = 'img/google.webp';
-const AVCOL = ['#0b3a5d', '#12a150', '#12507d', '#b4651a', '#6d3d8c', '#1d6ea8'];
+const AVCOL = ['#0b3a5d', '#0d8040', '#12507d', '#a15613', '#6d3d8c', '#1d6ea8'];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const attr = (s) => esc(s).replace(/"/g, '&quot;');
@@ -194,7 +194,12 @@ ${SCRIPT}
 const provider = {
   '@type': 'Plumber', '@id': SITE + '/#business', name: 'Super Vodár Bratislava',
   telephone: TEL, email: 'supervodarba@gmail.com', url: SITE + '/',
-  address: { '@type': 'PostalAddress', addressLocality: 'Bratislava', addressCountry: 'SK' },
+  address: {
+    '@type': 'PostalAddress', streetAddress: 'Znievska 23', postalCode: '851 06',
+    addressLocality: 'Bratislava', addressRegion: 'Bratislavský kraj', addressCountry: 'SK',
+  },
+  priceRange: '€€',
+  availableLanguage: { '@type': 'Language', name: 'Slovak', alternateName: 'sk' },
   geo: { '@type': 'GeoCoordinates', latitude: 48.1012402, longitude: 17.1066393 },
 };
 
